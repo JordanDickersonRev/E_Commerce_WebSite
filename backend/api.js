@@ -1,4 +1,4 @@
-const database = require('./backend');
+const database = require('./database');
 const express = require('express');
 const PORT = 3000;
 const app = express();
