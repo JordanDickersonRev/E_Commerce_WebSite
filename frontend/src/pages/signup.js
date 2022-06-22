@@ -7,16 +7,22 @@ function Signup(){
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    let tryAgain = '';
 
     function createUser(){
-        Axios.post('http://localhost:3001/signup', {
-        username: username, 
-        email: email,
-        password: password
-        }).then(()=>{
-            alert("successful insert")
-        });
-        
+        if(username === '' || email === '' || password === ''){
+            tryAgain = "Error";
+            document.getElementById('error').innerHTML = tryAgain + "<br />";
+        }
+        else {
+            Axios.post('http://localhost:3001/signup', {
+            username: username, 
+            email: email,
+            password: password
+            }).then(()=>{
+                alert("successful insert")
+            });
+        }
     }
 
     /*let page = useNavigate();
@@ -33,20 +39,21 @@ function Signup(){
                     <Form.Control className ='Input'
                     onChange={e => setUsername(e.target.value)}
                     type="text"
-                    placeholder = "Create Username" required/>
+                    placeholder = "Create Username" required />
                 </Form.Group>
                 <Form.Group>
                     <Form.Control className ='Input'
                     onChange={e => setEmail(e.target.value)}
-                    type="text"
-                    placeholder = "Enter Email" required/>
+                    type="email"
+                    placeholder = "Enter Email" required />
                 </Form.Group>
                 <Form.Group>
                     <Form.Control className ='Input'
                     onChange={e => setPassword(e.target.value)}
-                    type="text"
-                    placeholder = "Create Password" required/>
+                    type="password"
+                    placeholder = "Create Password" required />
                 </Form.Group>
+                <label id='error' />
                 <Button onClick={e => createUser(e)} type="submit">Submit</Button>
             </Form>
         </div>
