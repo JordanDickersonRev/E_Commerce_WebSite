@@ -2,7 +2,6 @@ const database = require('./database');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const Axios = require('axios');
 const PORT = 3001;
 const app = express();
 
@@ -14,7 +13,15 @@ app.get("/store", (req,res)=>{
     database.query("SELECT * FROM skateboards", (err, result)=>{
         if(err) { console.log(err);}
         res.send(result);
-    })
+    });
+});
+
+app.get("/users", (req, res)=>{
+    database.query(`SELECT COUNT(username) From users`,
+    (err,result)=>{
+        if(err) throw err;
+        res.send(result);
+    });
 });
 
 app.post("/signup",(req,res)=> {
@@ -23,11 +30,18 @@ app.post("/signup",(req,res)=> {
     const email = req.body.email;
     const password = req.body.password;
 
-    database.query(`INSERT INTO users (username, email, password) 
-    VALUES (?,?,?)`, [username, email, password],
-    (err, result) => {
-        console.log(err);
-    })
+    database.query(`insert into users(username, email, password)
+    select * FROM (SELECT`+ database.escape(username) +`as username,
+    `+ database.escape(email) +`as email,
+    `+ database.escape(password) +`as password) as new_value
+    WHERE NOT EXISTS (
+       SELECT username AND email FROM users WHERE
+       username = `+ database.escape(username) +` OR
+       email = `+ database.escape(email) +`
+   ) LIMIT 1;`,(err, result) => {
+        if(err) throw err;
+        res.send(result);
+    });
 });
 
 app.post("/login", (req,res)=> {
@@ -35,10 +49,15 @@ app.post("/login", (req,res)=> {
     const email = req.body.email;
     const password = req.body.password;
 
-    const selectedUser = database.query(`SELECT username FROM users WHERE
-     username = ${username},
-     email = ${email},
-     password = ${password}`)
+    database.query(`SELECT username FROM users WHERE
+        username =`+ database.escape(username) +`,
+        email =`+ database.escape(email) +`,
+        password =`+ database.escape(password)
+    ), (err, result) => {
+        if(err) {
+            console.log(err);
+        }
+    };
 });
 
 app.listen(PORT, ()=>{

@@ -10,6 +10,7 @@ import Store from './pages/store';
 function App() {
   return (
     <div className="App">
+      <Header/>
       <Router>
         <Routes>
           <Route path='/home' element={<Home/>}/>

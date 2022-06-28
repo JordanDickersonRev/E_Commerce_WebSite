@@ -7,9 +7,18 @@ function Signup(){
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    
+    useEffect(()=>{
+        Axios.get('http://localhost:3001/users').then((response) =>{
+            console.log(response.data);
+        });
+    }, []);
+
     let tryAgain = '';
 
-    function createUser(){
+    function signupUser(e){
+        e.preventDefault();
+
         if(username === '' || email === '' || password === ''){
             tryAgain = "Error";
             document.getElementById('error').innerHTML = tryAgain + "<br />";
@@ -19,8 +28,8 @@ function Signup(){
             username: username, 
             email: email,
             password: password
-            }).then(()=>{
-                alert("successful insert")
+            }).then(function(response){
+                console.log(response);
             });
         }
     }
@@ -54,7 +63,7 @@ function Signup(){
                     placeholder = "Create Password" required />
                 </Form.Group>
                 <label id='error' />
-                <Button onClick={e => createUser(e)} type="submit">Submit</Button>
+                <Button onClick={e => signupUser(e)} type="submit">Submit</Button>
             </Form>
         </div>
     )

@@ -4,16 +4,31 @@ import Axios from 'axios';
 //import { Link, useNavigate } from 'react-router-dom';
 
 function Login(){
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    let tryAgain = '';
+
+    function loginUser(){
+        if(username === '' || email === '' || password === ''){
+            tryAgain = "Error";
+            document.getElementById('error').innerHTML = tryAgain + "<br />";
+        }
+        else {
+            Axios.post('http://localhost:3001/login', {
+            username: username, 
+            email: email,
+            password: password
+            }, (err,result) =>{
+                if(err) console.log(err);
+            })
+        }
+    }
+
     return (
         <div>
-            
-        </div>
-    )
-}
-export default Login;
-
-/*
-<Form>
+            <Form>
                 <Form.Group>
                     <Form.Control className ='Input'
                     onChange={e => setUsername(e.target.value)}
@@ -33,5 +48,9 @@ export default Login;
                     placeholder = "Create Password" required />
                 </Form.Group>
                 <label id='error' />
-                <Button onClick={e => createUser(e)} type="submit">Submit</Button>
-            </Form>*/
+                <Button onClick={e => loginUser(e)} type="submit">Submit</Button>
+            </Form>
+        </div>
+    )
+}
+export default Login;

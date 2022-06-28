@@ -1,1 +1,12 @@
+.navbar {
+    background: #000000;
+    height: 80px;
+    position: sticky;
+    z-index: 999;
+}
+
+.navbar_logo {
+    background: #ffffff;
+    font-size: 2rem;
+}
 
