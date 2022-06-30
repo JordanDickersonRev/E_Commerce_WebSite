@@ -1,5 +1,10 @@
 function Header(){
-    return (
+    
+}
+export default Header;
+
+/*
+return (
         <nav className="navbar">
             <label className="navbar_logo">SkateHouse</label>
             <div className="navbar_toggle mobile-menu">
@@ -22,6 +27,4 @@ function Header(){
                 </li>
             </ul>
         </nav>
-    )
-}
-export default Header;
+    )*/

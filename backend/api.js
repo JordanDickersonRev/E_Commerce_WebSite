@@ -40,7 +40,13 @@ app.post("/signup",(req,res)=> {
        email = `+ database.escape(email) +`
    ) LIMIT 1;`,(err, result) => {
         if(err) throw err;
-        res.send(result);
+        
+        if(result.affectedRows > 0){
+            console.log(result);
+        }
+        else {
+            res.send({ message: "Username or Email already exists"})
+        }
     });
 });
 

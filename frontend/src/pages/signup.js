@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Axios from 'axios';
 //import { Link, useNavigate } from 'react-router-dom';
@@ -6,32 +6,63 @@ import Axios from 'axios';
 function Signup(){
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
+    const [confirmEmail, setconfirmEmail] = useState('');
     const [password, setPassword] = useState('');
     
-    useEffect(()=>{
+    /*useEffect(()=>{
         Axios.get('http://localhost:3001/users').then((response) =>{
             console.log(response.data);
         });
-    }, []);
+    }, []);*/
 
-    let tryAgain = '';
+    
 
     function signupUser(e){
         e.preventDefault();
 
-        if(username === '' || email === '' || password === ''){
-            tryAgain = "Error";
-            document.getElementById('error').innerHTML = tryAgain + "<br />";
+        let tryAgain = [];
+
+        const unnecessaryPattern = /\W|\s/g;
+        const speccharPattern = /[_!?]/g;
+        const lowercasePattern = /[a-z]/g;
+        const uppercasePattern = /[A-Z]/g;
+        const digitPattern = /\d/g;
+
+        if(username === '' || email === '' || confirmEmail === '' || password === '')
+            tryAgain.push(`Error blank field(s)<br />`);
+        else if(unnecessaryPattern.test(username))
+            tryAgain.push(`Username can only contain digits, uppercase or lowercase characters<br />`);
+        else if(username.length < 6)
+            tryAgain.push(`Username must have at least 6 characters<br />`);
+        else if(confirmEmail !== email)
+            tryAgain.push(`Email and Confirm Email must match<br />`);
+        else if(password.length < 8)
+            tryAgain.push(`Password must have at least 8 characters<br />`);
+        else if(!lowercasePattern.test(password) || !uppercasePattern.test(password)
+            || !digitPattern.test(password) || !speccharPattern.test(password)
+            || unnecessaryPattern.test(password)){
+            tryAgain.push(`Password must contain at least one of each<br />`); 
+            tryAgain.push(`- uppercase letter<br />`);
+            tryAgain.push(`- lowercase letter<br />`);
+            tryAgain.push(`- number<br />`);
+            tryAgain.push(`- special character (! or ? or _ )<br />`);
         }
-        else {
+
+        if(tryAgain === []){
             Axios.post('http://localhost:3001/signup', {
             username: username, 
             email: email,
             password: password
             }).then(function(response){
-                console.log(response);
+                console.log(response.data);
+
+                if(response.data.message) {
+                    document.getElementById('error').innerHTML = response.data.message + "<br />";
+                }
             });
         }
+        else
+            document.getElementById('error').innerHTML = tryAgain.join('');
     }
 
     /*let page = useNavigate();
@@ -55,6 +86,12 @@ function Signup(){
                     onChange={e => setEmail(e.target.value)}
                     type="email"
                     placeholder = "Enter Email" required />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Control className ='Input'
+                    onChange={e => setconfirmEmail(e.target.value)}
+                    type="email"
+                    placeholder = "Confirm Email" required />
                 </Form.Group>
                 <Form.Group>
                     <Form.Control className ='Input'
