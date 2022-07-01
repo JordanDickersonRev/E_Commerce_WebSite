@@ -1,29 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Axios from 'axios';
 //import { Link, useNavigate } from 'react-router-dom';
 
 function Login(){
 
-    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    let tryAgain = '';
+    
+    function loginUser(e){
 
-    function loginUser(){
-        if(username === '' || email === '' || password === ''){
-            tryAgain = "Error";
-            document.getElementById('error').innerHTML = tryAgain + "<br />";
-        }
+        e.preventDefault();
+        let tryAgain = [];
+
+        if(email === '' || password === '')
+            tryAgain.push(`Error blank field(s)<br />`);   
         else {
             Axios.post('http://localhost:3001/login', {
-            username: username, 
             email: email,
             password: password
-            }, (err,result) =>{
-                if(err) console.log(err);
-            })
+            }).then(function(response){
+                console.log(response.data);
+
+                if(response.data.message) 
+                    document.getElementById('error').innerHTML = response.data.message + "<br />";
+            });
         }
+        document.getElementById('error').innerHTML = tryAgain.join('');
     }
 
     return (
@@ -31,21 +34,15 @@ function Login(){
             <Form>
                 <Form.Group>
                     <Form.Control className ='Input'
-                    onChange={e => setUsername(e.target.value)}
-                    type="text"
-                    placeholder = "Create Username" required />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Control className ='Input'
                     onChange={e => setEmail(e.target.value)}
                     type="email"
-                    placeholder = "Enter Email" required />
+                    placeholder = "Email" required />
                 </Form.Group>
                 <Form.Group>
                     <Form.Control className ='Input'
                     onChange={e => setPassword(e.target.value)}
                     type="password"
-                    placeholder = "Create Password" required />
+                    placeholder = "Password" required />
                 </Form.Group>
                 <label id='error' />
                 <Button onClick={e => loginUser(e)} type="submit">Submit</Button>

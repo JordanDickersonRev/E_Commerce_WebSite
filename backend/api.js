@@ -16,14 +16,6 @@ app.get("/store", (req,res)=>{
     });
 });
 
-app.get("/users", (req, res)=>{
-    database.query(`SELECT COUNT(username) From users`,
-    (err,result)=>{
-        if(err) throw err;
-        res.send(result);
-    });
-});
-
 app.post("/signup",(req,res)=> {
 
     const username = req.body.username;
@@ -41,29 +33,24 @@ app.post("/signup",(req,res)=> {
    ) LIMIT 1;`,(err, result) => {
         if(err) throw err;
         
-        if(result.affectedRows > 0){
-            console.log(result);
-        }
-        else {
-            res.send({ message: "Username or Email already exists"})
-        }
+        if(result.affectedRows > 0) console.log(result);
+        else res.send({ message: `Username or Email already exists`});
     });
 });
 
 app.post("/login", (req,res)=> {
-    const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
 
     database.query(`SELECT username FROM users WHERE
-        username =`+ database.escape(username) +`,
-        email =`+ database.escape(email) +`,
-        password =`+ database.escape(password)
-    ), (err, result) => {
-        if(err) {
-            console.log(err);
-        }
-    };
+        email =` + database.escape(email) +` and 
+        password =` + database.escape(password), 
+        (err, result)=>{
+        if(err) throw err;
+        
+        if(result.length > 0) console.log(result);
+        else res.send({ message: `Invalid Email/Password combination`});
+    });
 });
 
 app.listen(PORT, ()=>{

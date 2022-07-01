@@ -18,8 +18,8 @@ function Signup(){
     
 
     function signupUser(e){
-        e.preventDefault();
 
+        e.preventDefault();
         let tryAgain = [];
 
         const unnecessaryPattern = /([^!?\w]|\s)/g;
@@ -66,12 +66,10 @@ function Signup(){
             }).then(function(response){
                 console.log(response.data);
 
-                if(response.data.message) {
+                if(response.data.message) 
                     document.getElementById('error').innerHTML = response.data.message + "<br />";
-                }
             });
         }
-        
         document.getElementById('error').innerHTML = tryAgain.join('');
     }
 
