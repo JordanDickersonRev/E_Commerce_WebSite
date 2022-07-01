@@ -22,18 +22,28 @@ function Signup(){
 
         let tryAgain = [];
 
-        const unnecessaryPattern = /\W|\s/g;
-        const speccharPattern = /[_!?]/g;
+        const unnecessaryPattern = /([^!?\w]|\s)/g;
+        const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        const speccharPattern = /[!?_]/g;
         const lowercasePattern = /[a-z]/g;
         const uppercasePattern = /[A-Z]/g;
         const digitPattern = /\d/g;
 
         if(username === '' || email === '' || confirmEmail === '' || password === '')
             tryAgain.push(`Error blank field(s)<br />`);
-        else if(unnecessaryPattern.test(username))
-            tryAgain.push(`Username can only contain digits, uppercase or lowercase characters<br />`);
+        else if(unnecessaryPattern.test(username)){
+            tryAgain.push(`Username can only contain<br />`);
+            tryAgain.push(`- digits<br />`);
+            tryAgain.push(`- ! , ? or _<br />`);
+            tryAgain.push(`- uppercase or lowercase letters<br />`);
+            tryAgain.push(`- NO SPACES<br />`);
+        }
         else if(username.length < 6)
             tryAgain.push(`Username must have at least 6 characters<br />`);
+        else if(!emailPattern.test(email)){
+            tryAgain.push(`Please enter a valid email address<br />`);
+            tryAgain.push(`- NO SPACES<br />`);
+        }
         else if(confirmEmail !== email)
             tryAgain.push(`Email and Confirm Email must match<br />`);
         else if(password.length < 8)
@@ -45,10 +55,10 @@ function Signup(){
             tryAgain.push(`- uppercase letter<br />`);
             tryAgain.push(`- lowercase letter<br />`);
             tryAgain.push(`- number<br />`);
-            tryAgain.push(`- special character (! or ? or _ )<br />`);
+            tryAgain.push(`- ! or ? or _<br />`);
+            tryAgain.push(`- NO SPACES<br />`);
         }
-
-        if(tryAgain === []){
+        else {
             Axios.post('http://localhost:3001/signup', {
             username: username, 
             email: email,
@@ -61,8 +71,8 @@ function Signup(){
                 }
             });
         }
-        else
-            document.getElementById('error').innerHTML = tryAgain.join('');
+        
+        document.getElementById('error').innerHTML = tryAgain.join('');
     }
 
     /*let page = useNavigate();
