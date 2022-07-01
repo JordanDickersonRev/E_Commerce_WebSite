@@ -9,14 +9,6 @@ function Signup(){
     const [confirmEmail, setconfirmEmail] = useState('');
     const [password, setPassword] = useState('');
     
-    /*useEffect(()=>{
-        Axios.get('http://localhost:3001/users').then((response) =>{
-            console.log(response.data);
-        });
-    }, []);*/
-
-    
-
     function signupUser(e){
 
         e.preventDefault();

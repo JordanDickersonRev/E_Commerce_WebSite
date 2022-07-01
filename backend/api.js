@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/store", (req,res)=>{
     database.query("SELECT * FROM skateboards", (err, result)=>{
-        if(err) { console.log(err);}
+        if(err) throw err;
         res.send(result);
     });
 });
