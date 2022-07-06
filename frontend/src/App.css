@@ -1,12 +1,31 @@
 .navbar {
-    background: #000000;
-    height: 80px;
-    position: sticky;
+    background: #c9c9c9;
+    height: 100px;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .navbar_logo {
-    background: #ffffff;
+    color: #232323;
     font-size: 2rem;
 }
+
+.navbar_menu {
+    list-style: none;
+    display: flex;
+    color: #232323;
+}
+
+.navbar_menu label {
+    padding: 0 1rem;
+    font-size: 2rem;
+}
+
+
+
+
+
 

@@ -1,30 +1,20 @@
+import Hamburger from "./hamburger";
 function Header(){
-    
-}
-export default Header;
 
-/*
-return (
-        <nav className="navbar">
-            <label className="navbar_logo">SkateHouse</label>
-            <div className="navbar_toggle mobile-menu">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </div>
+    return (
+        <nav className="navbar" id="outer-container">
+            <Hamburger pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+            <label className="navbar_logo">Skate<br/>House</label>
             <ul className="navbar_menu">
-                <li className="navbar_item">
-                    <label>Sign Up</label>
-                </li>
-                <li className="navbar_item">
-                    <label>Log In</label>
-                </li>
-                <li className="navbar_item">
+                <li>
                     <label>Complete Skateboards</label>
                 </li>
-                <li className="navbar_item">
-                    <label>My Cart</label>
+                <li>
+                    <label>My Bag</label>
                 </li>
             </ul>
+            
         </nav>
-    )*/
+    )
+}
+export default Header;
