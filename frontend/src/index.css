@@ -12,8 +12,8 @@
 [data-theme='dark'] {
   --background: #0b0b0b;
   --text-primary: #ffffff;
-  --text-secondary: #00388b;
-  --accent: #808080;
+  --text-secondary: #6b8eff;
+  --accent: #9b9b9b;
 }
 
 body {

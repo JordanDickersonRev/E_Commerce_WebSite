@@ -1,9 +1,11 @@
 /*theme switch*/
 .switch {
-    position: relative;
+    position: fixed;
     display: inline-block;
     width: 60px;
     height: 34px;
+    left: 80rem;
+    top: 30px;
 }
 
 .switch input { 
@@ -19,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--accent);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;
@@ -32,18 +34,18 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: var(--text-primary);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
 }
 
 input:checked + .slider_round {
-    background-color: #2196F3;
+    background-color: var(--accent);
 }
 
 input:focus + .slider_round {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--accent);
 }
 
 input:checked + .slider_round:before {
@@ -57,12 +59,11 @@ input:checked + .slider_round:before {
 .navbar {
     background: var(--background);
     height: 100px;
-    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
     position: static;
-    border-bottom: 10px solid var(--text-primary);
+    border-bottom: 5px solid var(--accent);
 }
 
 .navbar_logo {
