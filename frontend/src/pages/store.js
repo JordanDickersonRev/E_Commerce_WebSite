@@ -17,12 +17,13 @@ function Store(){
         <div>
             {skateboards.map((value)=>{
                 return <div key={value.id}>
-                    {value.brand}
-                    {value.price}
-                </div>
-                //return <img src={value.image}></img>     
+                    <img src={require('./images/2.jpg')}></img>
+                    {value.description} 
+                    {value.price} 
+                </div>     
             })}
         </div>
     )
 }
 export default Store;
+//<img src={value.image_src}/>
