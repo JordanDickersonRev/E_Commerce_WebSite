@@ -78,15 +78,15 @@ app.post("/upload", (req,res)=>{
     });
 });
 
-app.post("/upload/image", (req,res)=>{
+app.post("/update", (req,res)=>{
 
     const image_src = req.body.image_src;
     const description = req.body.description;
 
     database.query(`UPDATE skateboards
-        SET image_src =` + database.escape(image_src) +`,
-        WHERE description =`+ database.escape(description),
-        (err, result)=>{
+        SET image_src =` + database.escape(image_src) +`
+        WHERE description =`+ database.escape(description) +`;`
+        ,(err, result)=>{
             if(err) throw err;
 
             if(result.affectedRows > 0) console.log(result);

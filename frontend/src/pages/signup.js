@@ -106,18 +106,3 @@ function Signup(){
     )
 }
 export default Signup;
-
-/* 
-            <label>username</label>
-            <input type="text"
-                name='username'
-                onChange={(e) => setUsername(e.target.value)} />
-            <label>email</label>
-            <input type="text"
-                name='email'
-                onChange={(e) => setEmail(e.target.value)} />
-            <label>password</label>
-            <input type="text"
-                name='password'
-                onChange={(e) => setPassword(e.target.value)} />
-            <button onClick={createUser}>Submit</button>*/

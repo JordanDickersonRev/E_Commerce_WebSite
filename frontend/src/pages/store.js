@@ -17,7 +17,7 @@ function Store(){
         <div>
             {skateboards.map((value)=>{
                 return <div key={value.id}>
-                    <img src={require('./images/2.jpg')}></img>
+                    <img src={require(value.image_src)}></img>
                     {value.description} 
                     {value.price} 
                 </div>     
@@ -26,4 +26,3 @@ function Store(){
     )
 }
 export default Store;
-//<img src={value.image_src}/>

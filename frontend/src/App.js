@@ -8,6 +8,7 @@ import Signup from './pages/signup';
 import Login from './pages/login';
 import Store from './pages/store';
 import Upload from './pages/upload';
+import Update from './pages/update';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/store' element={<Store/>}/>
           <Route path='/upload' element={<Upload/>}/>
+          <Route path='/update' element={<Update/>}/>
         </Routes>
       </Router>
     </div>
