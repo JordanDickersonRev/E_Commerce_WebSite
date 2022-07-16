@@ -32,6 +32,7 @@ function Login(){
     return (
         <div>
             <Form>
+            <h2 className='PageHeading'>LOG IN</h2>
                 <Form.Group>
                     <Form.Control className ='Input'
                     onChange={e => setEmail(e.target.value)}

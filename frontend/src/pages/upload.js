@@ -34,13 +34,13 @@ function Upload(){
 
     return(
         <div>
-            <h2>Upload Skateboard</h2>
             <Form>
+            <h2 className='PageHeading'>UPLOAD SKATEBOARD</h2>
             <Form.Group>
                 <Form.Control className ='Input'
                     onChange={e => setImage(e.target.value)}
                     type="text" 
-                    placeholder ="Ex ./images/image.jpg" required />
+                    placeholder ="Image File Name" required />
             </Form.Group>
             <Form.Group>
                 <Form.Control className ='Input'

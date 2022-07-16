@@ -28,13 +28,13 @@ function Update(){
 
     return (
         <div>
-             <h2>Update Image</h2>
             <Form>
+            <h2 className='PageHeading'>UPDATE IMAGE</h2>
             <Form.Group>
                 <Form.Control className ='Input'
                     onChange={e => setImage(e.target.value)}
                     type="text"
-                    placeholder ="Ex ./images/image.jpg" required />
+                    placeholder ="Image File Name" required />
             </Form.Group>
             <Form.Group>
                 <Form.Control className ='Input'

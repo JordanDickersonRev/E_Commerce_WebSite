@@ -75,6 +75,7 @@ function Signup(){
     return (
         <div>
             <Form>
+            <h2 className='PageHeading'>SIGN UP</h2>
                 <Form.Group>
                     <Form.Control className ='Input'
                     onChange={e => setUsername(e.target.value)}

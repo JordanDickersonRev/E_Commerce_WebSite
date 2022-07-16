@@ -4,8 +4,8 @@
     display: inline-block;
     width: 60px;
     height: 34px;
-    left: 80rem;
-    top: 30px;
+    left: 80%;
+    top: 4%;
 }
 
 .switch input { 
@@ -59,6 +59,7 @@ input:checked + .slider_round:before {
 .navbar {
     background: var(--background);
     height: 100px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,3 +84,47 @@ input:checked + .slider_round:before {
 }
 /*End of Header*/
 
+/*App Color*/
+.App{
+    background: var(--background);
+    height: 100vh;
+}
+/*End of Page Color*/
+
+/*Page Heading*/
+.PageHeading{
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+/*End of Page Heading*/
+
+/*Forms*/
+Form{
+    text-align: center;
+    /*border: 2px solid var(--accent);*/
+    border-radius: 8px;
+    margin: 2rem 10rem;
+}
+
+.Input{
+    margin-bottom: 0.7rem;
+    font-size: 1.7rem;
+    background-color: var(--background);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+Form label{
+    color: var(--accent);
+}
+
+Form Button{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    background-color: var(--background);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+/*End of Forms*/
