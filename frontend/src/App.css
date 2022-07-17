@@ -58,15 +58,11 @@ input:checked + .slider_round:before {
 /*Header*/
 .navbar {
     background: linear-gradient(to right, var(--text-primary) 80%, var(--accent));
-    /*height: 40px;*/
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*position: relative;*/
     padding: 0.5rem;
     margin-top: 1.5rem;
-    /*border-bottom: 5px solid var(--accent);*/
 }
 
 .navbar_logo {
@@ -74,8 +70,6 @@ input:checked + .slider_round:before {
     font-size: 1.5rem;
     cursor: pointer;
     text-decoration: none;
-    /*position: relative;
-    top: -90%;*/
 }
 
 .navbar_logo:hover {
@@ -85,7 +79,6 @@ input:checked + .slider_round:before {
 .navbar_menu {
     list-style: none;
     display: flex;
-    /*color: var(--text-primary);*/
 }
 
 .navbar_link {
@@ -94,8 +87,6 @@ input:checked + .slider_round:before {
     font-size: 1.5rem;
     cursor: pointer;
     text-decoration: none;
-    /*position: relative;
-    top: -90%;*/
 }
 
 .navbar_link:hover{
