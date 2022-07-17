@@ -7,6 +7,7 @@ import Home from './pages/home';
 import Signup from './pages/signup';
 import Login from './pages/login';
 import Store from './pages/store';
+import MyBag from './pages/mybag';
 import Upload from './pages/upload';
 import Update from './pages/update';
 
@@ -28,13 +29,14 @@ function App() {
           type = "checkbox"/>
           <span className='slider_round'/>
       </label>
-      <Header/>
       <Router>
+      <Header/>
         <Routes>
-          <Route path='/home' element={<Home/>}/>
+          <Route path='/' element={<Home/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/store' element={<Store/>}/>
+          <Route path='/mybag' element={<MyBag/>}/>
           <Route path='/upload' element={<Upload/>}/>
           <Route path='/update' element={<Update/>}/>
         </Routes>

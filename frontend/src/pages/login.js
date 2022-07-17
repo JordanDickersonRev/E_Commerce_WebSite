@@ -46,7 +46,7 @@ function Login(){
                     placeholder = "Password" required />
                 </Form.Group>
                 <label id='error' />
-                <Button onClick={e => loginUser(e)} type="submit">Submit</Button>
+                <Button onClick={e => loginUser(e)} type="submit">LOG IN</Button>
             </Form>
         </div>
     )

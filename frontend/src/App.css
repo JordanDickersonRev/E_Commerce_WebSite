@@ -1,10 +1,10 @@
 /*theme switch*/
 .switch {
-    position: fixed;
+    position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-    left: 80%;
+    left: 90%;
     top: 4%;
 }
 
@@ -57,30 +57,49 @@ input:checked + .slider_round:before {
 
 /*Header*/
 .navbar {
-    background: var(--background);
-    height: 100px;
+    background: linear-gradient(to right, var(--text-primary) 80%, var(--accent));
+    /*height: 40px;*/
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: static;
-    border-bottom: 5px solid var(--accent);
+    /*position: relative;*/
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    /*border-bottom: 5px solid var(--accent);*/
 }
 
 .navbar_logo {
-    color: var(--text-primary);
-    font-size: 2rem;
+    color: var(--background);
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    /*position: relative;
+    top: -90%;*/
+}
+
+.navbar_logo:hover {
+    color: var(--text-secondary);
 }
 
 .navbar_menu {
     list-style: none;
     display: flex;
-    color: var(--text-primary);
+    /*color: var(--text-primary);*/
 }
 
-.navbar_menu label {
+.navbar_link {
+    color: var(--background);
     padding: 0 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    /*position: relative;
+    top: -90%;*/
+}
+
+.navbar_link:hover{
+    color: var(--text-secondary);
 }
 /*End of Header*/
 
@@ -126,5 +145,6 @@ Form Button{
     background-color: var(--background);
     color: var(--accent);
     border: 1px solid var(--accent);
+    cursor: pointer;
 }
 /*End of Forms*/

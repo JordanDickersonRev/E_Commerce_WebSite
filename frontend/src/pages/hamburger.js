@@ -1,16 +1,18 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import {Link } from 'react-router-dom';
 import './hamburger.css';
 
-export default props => {
+function Hamburger(){
   return (
     <Menu>
-      <a className="menu-item">
-        Log In
-      </a>
-      <a className="menu-item">
+      <Link to='/signup' className="menu-item">
         Sign Up
-      </a>
+      </Link>
+      <Link to='/login' className="menu-item">
+        Log In
+      </Link>
     </Menu>
   );
-};
+}
+export default Hamburger;
