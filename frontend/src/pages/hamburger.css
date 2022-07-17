@@ -9,12 +9,12 @@
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: var(--text-primary);
+    background: var(--text-font);
   }
   
   /* Color/shape of burger icon bars on hover*/
   .bm-burger-bars-hover {
-    background: var(--text-secondary);
+    background: var(--accent);
   }
   
   /* Position and sizing of clickable cross button */
@@ -25,7 +25,7 @@
   
   /* Color/shape of close button cross */
   .bm-cross {
-    background: var(--text-primary);
+    background: var(--text-font);
   }
   
   /*
@@ -59,7 +59,7 @@
   /* Individual item */
     .bm-item {
         display: inline-block;
-        color: var(--text-primary);
+        color: var(--text-font);
         margin-bottom: 10px;
         text-align: left;
         text-decoration: none;
@@ -67,7 +67,7 @@
     }
   
     .bm-item:hover {
-    color: var(--text-secondary);
+    color: var(--accent);
     cursor: pointer;
   }
   

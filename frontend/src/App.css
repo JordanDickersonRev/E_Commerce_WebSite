@@ -34,7 +34,7 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: var(--text-primary);
+    background-color: var(--text-font);
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
@@ -63,10 +63,11 @@ input:checked + .slider_round:before {
     align-items: center;
     padding: 0.5rem;
     margin-top: 1.5rem;
+    /*border-bottom: 2px solid var(--nav-font);*/
 }
 
 .navbar_logo {
-    color: var(--background);
+    color: var(--nav-font);
     font-size: 1.5rem;
     cursor: pointer;
     text-decoration: none;
@@ -82,7 +83,7 @@ input:checked + .slider_round:before {
 }
 
 .navbar_link {
-    color: var(--background);
+    color: var(--nav-font);
     padding: 0 1rem;
     font-size: 1.5rem;
     cursor: pointer;
@@ -105,7 +106,7 @@ input:checked + .slider_round:before {
 .PageHeading{
     text-align: center;
     font-size: 2.5rem;
-    color: var(--accent);
+    color: var(--text-font);
 }
 /*End of Page Heading*/
 
@@ -121,12 +122,12 @@ Form{
     margin-bottom: 0.7rem;
     font-size: 1.7rem;
     background-color: var(--background);
-    color: var(--accent);
+    color: var(--text-font);
     border: 1px solid var(--accent);
 }
 
 Form label{
-    color: var(--accent);
+    color: var(--text-font);
 }
 
 Form Button{

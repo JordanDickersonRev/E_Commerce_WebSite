@@ -7,13 +7,17 @@
   --background: #ffffff;
   --text-primary: #0b0b0b;
   --text-secondary: #e1415c;
+  --text-font: #0b0b0b;
+  --nav-font: #ffffff;
   --accent: #800080;
 }
 [data-theme='dark'] {
-  --background: #06081f;
-  --text-primary: #6783c0;
-  --text-secondary: #ffffff;
-  --accent: #b4d8ff;
+  --background: #0b0b0b;
+  --text-primary: #6768c0;
+  --text-secondary: #0b0b0b;
+  --text-font: #ffffff;
+  --nav-font: #ffffff;
+  --accent: #b4b9ff;
 }
 
 body {
