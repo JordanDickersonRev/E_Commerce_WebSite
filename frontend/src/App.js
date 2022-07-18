@@ -23,7 +23,10 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
+      <label className="username"></label>
+      <label className="message">FREE SHIPPING ON ORDERS OVER $99.99</label>
       <label className="switch">
+        
         <input 
           onClick={switchTheme}
           type = "checkbox"/>

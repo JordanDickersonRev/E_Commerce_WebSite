@@ -56,6 +56,22 @@ input:checked + .slider_round:before {
 /*End of theme switch*/
 
 /*Header*/
+.username{
+    position: absolute;
+    font-size: 1rem;
+    top: 35px;
+    left: 10%;
+    color: var(--text-font);
+}
+
+.message{ 
+    position: absolute;
+    font-size: 1rem;
+    top: 35px;
+    left: 56%;
+    color: var(--text-font);
+}
+
 .navbar {
     background: linear-gradient(to right, var(--text-primary) 80%, var(--accent));
     display: flex;
@@ -63,7 +79,6 @@ input:checked + .slider_round:before {
     align-items: center;
     padding: 0.5rem;
     margin-top: 1.5rem;
-    /*border-bottom: 2px solid var(--nav-font);*/
 }
 
 .navbar_logo {

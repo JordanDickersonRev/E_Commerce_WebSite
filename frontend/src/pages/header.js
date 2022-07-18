@@ -3,8 +3,8 @@ import {Link } from 'react-router-dom';
 
 function Header(){
     return (
-        <div>
-            <Hamburger/>
+        <div> 
+            <Hamburger/>     
             <nav className="navbar">
                 <Link to='/' className="navbar_logo">Skate<br/>House</Link>
                 <ul className="navbar_menu">
