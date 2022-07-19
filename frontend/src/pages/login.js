@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { setGlobalState } from '../global/globalStates';
 import Axios from 'axios';
-//import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Login(){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    let page = useNavigate();
+    const unnecessaryPattern = /([^!?\w]|\s)/g;
     
     function loginUser(e){
 
@@ -21,9 +24,11 @@ function Login(){
             email: email,
             password: password
             }).then(function(response){
-                setGlobalState("username", response.data);
-                //console.log(response.data);
-
+                if(!unnecessaryPattern.test(response.data)){
+                    setGlobalState("username", response.data);
+                    page('/');
+                }
+                
                 if(response.data.message) 
                     document.getElementById('error').innerHTML = response.data.message + "<br />";
             });

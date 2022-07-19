@@ -1,7 +1,21 @@
 import Hamburger from "./hamburger";
-import {Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
+import { setGlobalState ,useGlobalState } from '../global/globalStates';
 
 function Header(){
+
+    const page = useNavigate('/');
+
+    const [username] = useGlobalState("username");
+    if(username !== ''){
+        document.getElementById("navbar_link").innerHTML = "Sign Out";
+    }
+
+    function signOut(){
+        setGlobalState("username",'');
+        page('/');
+    }
+
     return (
         <div> 
             <Hamburger/>     
@@ -14,9 +28,14 @@ function Header(){
                     <li>
                         <Link to='/mybag' className="navbar_link">My Bag</Link>
                     </li>
+                    <li>
+                        <Link to='/'  id="navbar_link"></Link>
+                    </li>
                 </ul>
             </nav>
         </div>
     )
 }
 export default Header;
+
+//onClick={signOut()}
