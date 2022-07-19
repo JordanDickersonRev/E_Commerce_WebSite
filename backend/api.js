@@ -50,7 +50,7 @@ app.post("/login", (req,res)=> {
         (err, result)=>{
         if(err) throw err;
         
-        if(result.length > 0) console.log(result);
+        if(result.length > 0) res.send(result[0].username);
         else res.send({ message: `Invalid Email/Password combination`});
     });
 });

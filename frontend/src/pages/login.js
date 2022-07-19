@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { setGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 //import { Link, useNavigate } from 'react-router-dom';
 
@@ -20,7 +21,8 @@ function Login(){
             email: email,
             password: password
             }).then(function(response){
-                console.log(response.data);
+                setGlobalState("username", response.data);
+                //console.log(response.data);
 
                 if(response.data.message) 
                     document.getElementById('error').innerHTML = response.data.message + "<br />";

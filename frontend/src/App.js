@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
 import useLocalStorage from 'use-local-storage';
+import { useGlobalState } from './global/globalStates';
 import Header from './pages/header';
 import Home from './pages/home';
 import Signup from './pages/signup';
@@ -13,6 +14,11 @@ import Update from './pages/update';
 
 function App() {
 
+  const [username] = useGlobalState("username");
+  if(username !== ''){
+    document.getElementById("username").innerHTML = username;
+  }
+
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
@@ -23,7 +29,7 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <label className="username"></label>
+      <label id="username"></label>
       <label className="message">FREE SHIPPING ON ORDERS OVER $99.99</label>
       <label className="switch">
         

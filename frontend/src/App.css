@@ -56,7 +56,7 @@ input:checked + .slider_round:before {
 /*End of theme switch*/
 
 /*Header*/
-.username{
+#username{
     position: absolute;
     font-size: 1rem;
     top: 35px;
@@ -115,15 +115,7 @@ input:checked + .slider_round:before {
     background: var(--background);
     height: 100vh;
 }
-/*End of Page Color*/
-
-/*Page Heading*/
-.PageHeading{
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--text-font);
-}
-/*End of Page Heading*/
+/*End of App Color*/
 
 /*Forms*/
 Form{
@@ -131,6 +123,16 @@ Form{
     /*border: 2px solid var(--accent);*/
     border-radius: 8px;
     margin: 2rem 10rem;
+}
+
+.PageHeading{
+    font-size: 2.5rem;
+    color: var(--text-font);
+}
+
+Form p{
+    color: var(--text-font);
+    margin-bottom: 2rem;
 }
 
 .Input{

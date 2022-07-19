@@ -75,7 +75,10 @@ function Signup(){
     return (
         <div>
             <Form>
-            <h2 className='PageHeading'>SIGN UP</h2>
+            <h2 className='PageHeading'>Create your SkateHouse account</h2>
+            <p>Create an account to enjoy easy order tracking, emails with special offers
+                and exclusive product drops, and more.
+            </p>
                 <Form.Group>
                     <Form.Control className ='Input'
                     onChange={e => setUsername(e.target.value)}
@@ -101,7 +104,7 @@ function Signup(){
                     placeholder = "Create Password" required />
                 </Form.Group>
                 <label id='error' />
-                <Button onClick={e => signupUser(e)} type="submit">Submit</Button>
+                <Button onClick={e => signupUser(e)} type="submit">CREATE MY ACCOUNT</Button>
             </Form>
         </div>
     )
