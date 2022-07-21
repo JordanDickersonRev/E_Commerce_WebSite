@@ -1,23 +1,20 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
-import useLocalStorage from 'use-local-storage';
 import { useGlobalState } from './global/globalStates';
+import useLocalStorage from 'use-local-storage';
 import Header from './pages/header';
 import Home from './pages/home';
 import Signup from './pages/signup';
 import Login from './pages/login';
 import Store from './pages/store';
+import Favorites from './pages/favorites';
 import MyBag from './pages/mybag';
 import Upload from './pages/upload';
 import Update from './pages/update';
 
 function App() {
-
   const [username] = useGlobalState("username");
-  if(username !== ''){
-    document.getElementById("username").innerHTML = username;
-  }
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
@@ -29,10 +26,8 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <label id="username"></label>
-      <label className="message">FREE SHIPPING ON ORDERS OVER $99.99</label>
+      <label id="username">{username}</label>
       <label className="switch">
-        
         <input 
           onClick={switchTheme}
           type = "checkbox"/>
@@ -45,6 +40,7 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/store' element={<Store/>}/>
+          <Route path='/favorites' element={<Favorites/>}/>
           <Route path='/mybag' element={<MyBag/>}/>
           <Route path='/upload' element={<Upload/>}/>
           <Route path='/update' element={<Update/>}/>

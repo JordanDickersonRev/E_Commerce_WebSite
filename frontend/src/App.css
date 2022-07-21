@@ -108,18 +108,6 @@ input:checked + .slider_round:before {
 .navbar_link:hover{
     color: var(--text-secondary);
 }
-
-#navbar_link {
-    color: var(--nav-font);
-    padding: 0 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-#navbar_link:hover{
-    color: var(--text-secondary);
-}
 /*End of Header*/
 
 /*App Color*/

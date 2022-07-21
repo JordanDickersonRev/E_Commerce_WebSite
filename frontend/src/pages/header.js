@@ -1,24 +1,11 @@
 import Hamburger from "./hamburger";
-import { Link, useNavigate } from 'react-router-dom'; 
-import { setGlobalState ,useGlobalState } from '../global/globalStates';
+import { Link } from 'react-router-dom'; 
 
 function Header(){
-
-    const page = useNavigate('/');
-
-    const [username] = useGlobalState("username");
-    if(username !== ''){
-        document.getElementById("navbar_link").innerHTML = "Sign Out";
-    }
-
-    function signOut(){
-        setGlobalState("username",'');
-        page('/');
-    }
-
     return (
         <div> 
-            <Hamburger/>     
+            <Hamburger/>
+            <label className="message">FREE SHIPPING ON ORDERS OVER $99.99</label> 
             <nav className="navbar">
                 <Link to='/' className="navbar_logo">Skate<br/>House</Link>
                 <ul className="navbar_menu">
@@ -28,14 +15,9 @@ function Header(){
                     <li>
                         <Link to='/mybag' className="navbar_link">My Bag</Link>
                     </li>
-                    <li>
-                        <Link to='/'  id="navbar_link"></Link>
-                    </li>
                 </ul>
             </nav>
         </div>
     )
 }
 export default Header;
-
-//onClick={signOut()}
