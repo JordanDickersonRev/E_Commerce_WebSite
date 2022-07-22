@@ -113,7 +113,7 @@ input:checked + .slider_round:before {
 /*App Color*/
 .App{
     background: var(--background);
-    height: 100vh;
+    height: 300vh;
 }
 /*End of App Color*/
 
@@ -157,3 +157,63 @@ Form Button{
     cursor: pointer;
 }
 /*End of Forms*/
+
+/*Home Page*/
+.homePage {
+    border: 5px solid var(--accent);
+    margin: 3rem 19rem;
+    background: var(--text-font);
+}
+
+.homeSection1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 1rem;
+    height: 30rem;
+    border: 2px solid var(--background);
+    background: var(--background);
+}
+
+.homeSection2{
+    margin: 1rem 1rem;
+    height: 17rem;
+    border: 2px solid var(--background);
+    background: var(--background);
+}
+
+.homeSection3 {
+    margin: 1rem 1rem;
+    height: 60rem;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.homeCard1 {
+    border: 2px solid var(--background);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    background: var(--background);
+}
+
+.homeCard2 {
+    border: 2px solid var(--background);
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    background: var(--background);
+}
+
+.homeCard3 {
+    border: 2px solid var(--background);
+    margin-top: 1rem;
+    margin-right: 1rem;
+    background: var(--background);
+}
+
+.homeCard4 {
+    border: 2px solid var(--background);
+    margin-top: 1rem;
+    margin-left: 1rem;
+    background: var(--background);
+}
+/*End of Home Page*/
