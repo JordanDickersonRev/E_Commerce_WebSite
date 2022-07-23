@@ -113,7 +113,7 @@ input:checked + .slider_round:before {
 /*App Color*/
 .App{
     background: var(--background);
-    height: 300vh;
+    height: 100vh;
 }
 /*End of App Color*/
 
@@ -160,60 +160,124 @@ Form Button{
 
 /*Home Page*/
 .homePage {
-    border: 5px solid var(--accent);
-    margin: 3rem 19rem;
-    background: var(--text-font);
+    padding: 3rem 15rem;
+    background: var(--background);
 }
+
+.homePage img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.homePage button {
+    position:relative;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid var(--background);
+    color: var(--text-font);
+    background: var(--background);
+    cursor: pointer;
+}
+
+.homeLink { text-decoration: none; }
 
 .homeSection1 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1rem 1rem;
     height: 30rem;
-    border: 2px solid var(--background);
-    background: var(--background);
+    background: rgb(46, 46, 46);
+    border: 1rem solid var(--text-font);
 }
 
 .homeSection2{
-    margin: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 17rem;
-    border: 2px solid var(--background);
-    background: var(--background);
+    background: rgb(46, 46, 46);
+    border: 1rem solid var(--text-font);
+    cursor: pointer;
 }
 
 .homeSection3 {
-    margin: 1rem 1rem;
+    margin: 0rem 1rem;
     height: 60rem;
     display: grid;
     grid-template-columns: auto auto;
 }
 
+/*.homeSection3 img {
+    max-width: 150%;
+    max-height: 150%;
+}*/
+
 .homeCard1 {
-    border: 2px solid var(--background);
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0rem solid var(--text-font);
+    margin-right: 0.5rem;
+    background: rgb(46, 46, 46);
 }
+
+/*.homeCard1 button {
+    position: relative;
+    opacity: 70%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    top: 46px;
+    width: 100%;
+    border: 1px solid var(--background);
+    color: var(--text-font);
+    background: var(--background);
+    cursor: pointer;
+}*/
 
 .homeCard2 {
-    border: 2px solid var(--background);
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0rem solid var(--text-font);
+    margin-left: 0.5rem;
+    background: rgb(46, 46, 46);
 }
 
-.homeCard3 {
-    border: 2px solid var(--background);
-    margin-top: 1rem;
-    margin-right: 1rem;
+/*.homeCard2 button {
+    position: relative;
+    opacity: 70%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    top: 41px;
+    width: 100%;
+    border: 1px solid var(--background);
+    color: var(--text-font);
     background: var(--background);
+    cursor: pointer;
+}*/
+
+.homeCard3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0rem solid var(--text-font);
+    margin-right: 0.5rem;
+    background: rgb(46, 46, 46);
 }
 
 .homeCard4 {
-    border: 2px solid var(--background);
-    margin-top: 1rem;
-    margin-left: 1rem;
-    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0rem solid var(--text-font);
+    margin-left: 0.5rem;
+    background: rgb(46, 46, 46);
 }
 /*End of Home Page*/
