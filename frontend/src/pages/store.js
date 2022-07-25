@@ -26,4 +26,3 @@ function Store(){
     )
 }
 export default Store;
-// <img src={require(`'`+value.image_src+`'`)}></img>

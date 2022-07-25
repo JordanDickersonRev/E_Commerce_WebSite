@@ -7,7 +7,6 @@ function Home() {
                 <div className='homeSection1'>
                     <img src={require('./branding/decksImage.png')} alt='SKATE DECKS'/>
                     <button>SHOP NOW!</button>
-                    <span/>
                 </div>
             </Link>
             <div className='homeSection2'>
@@ -17,25 +16,22 @@ function Home() {
             <div className='homeSection3'>
                 <div className='homeCard1'>
                     <img src={require('./branding/twitter.png')} alt='TWITTER'/>
-                    <button>FOLLOW US ON TWITTER</button>
+                    <label>FOLLOW US ON TWITTER</label>
                 </div>
                 <div className='homeCard2'>
                     <img src={require('./branding/instagram.png')} alt='INSTAGRAM'/>
-                    <button>FOLLOW US ON INSTAGRAM</button>
+                    <label>FOLLOW US ON INSTAGRAM</label>
                 </div>
                 <div className='homeCard3'>
                     <img src={require('./branding/snapchat.png')} alt='SNAPCHAT'/>
-                    <button>FOLLOW US ON SNAPCHAT</button>
+                    <label>FOLLOW US ON SNAPCHAT</label>
                 </div>
                 <div className='homeCard4'>
                     <img src={require('./branding/facebook.png')} alt='FACEBOOK'/>
-                    <button>FOLLOW US ON FACEBOOK</button>
+                    <label>FOLLOW US ON FACEBOOK</label>
                 </div>
             </div>  
         </div>
     )
 }
 export default Home;
-/*<img src={require('./branding/decksImage.png')} alt='SKATE DECKS'/>*/
-/*<h2>BEST DEALS FOR COMPLETE SKATEBOARDS</h2>
-                    */
