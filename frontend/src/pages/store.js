@@ -14,14 +14,17 @@ function Store(){
     }, [])
     
     return(
-        <div>
-            {skateboards.map((value)=>{
-                return <div key={value.id}>
-                    <img src={require('./images/'+ value.image_src)} alt={value.price}/>
-                    {value.description} 
-                    {value.price} 
-                </div>     
+        <div className='Store'>
+            <h2 className='PageHeading'>Complete Skateboards</h2>
+            <div className='SkateBoards'>
+                {skateboards.map((value)=>{
+                    return <div key={value.id}>
+                        <img src={require('./images/'+ value.image_src)} alt={value.price}/>
+                        <p>{value.description}</p> 
+                        <p>{value.price}</p> 
+                    </div>     
             })}
+            </div>
         </div>
     )
 }
