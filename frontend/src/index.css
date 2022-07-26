@@ -9,6 +9,8 @@
   --text-secondary: #e1415c;
   --text-font: #0b0b0b;
   --nav-font: #ffffff;
+  --text-favorite: #0b0b0b;
+  --favorite-hover: #de8694;
   --accent: #800080;
 }
 [data-theme='dark'] {
@@ -17,6 +19,8 @@
   --text-secondary: #0b0b0b;
   --text-font: #ffffff;
   --nav-font: #ffffff;
+  --text-favorite: #0b0b0b;
+  --favorite-hover: #b4b9ff;
   --accent: #b4b9ff;
 }
 

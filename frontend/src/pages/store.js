@@ -14,16 +14,30 @@ function Store(){
     }, [])
     
     return(
-        <div className='Store'>
+        <div>
             <h2 className='PageHeading'>Complete Skateboards</h2>
-            <div className='SkateBoards'>
-                {skateboards.map((value)=>{
-                    return <div key={value.id}>
-                        <img src={require('./images/'+ value.image_src)} alt={value.price}/>
-                        <p>{value.description}</p> 
-                        <p>{value.price}</p> 
-                    </div>     
-            })}
+            <div className='Store'>
+                <div className='Sizes'>
+                    <label>SIZE</label>
+                    <hr/>
+                    <div className='DeckSizes'>
+                        <button>7.0</button>
+                        <button>7.5</button>
+                        <button>7.75</button>
+                        <button>8.0</button>
+                        <button>8.25</button>
+                    </div>
+                </div>
+                <div className='SkateBoards'>
+                    {skateboards.map((value)=>{
+                        return <div key={value.id}>
+                            <button>FAVORITE</button>
+                            <img src={require('./images/'+ value.image_src)} alt={value.price}/>
+                            <p>{value.description}</p> 
+                            <p>{value.price}</p> 
+                        </div>     
+                    })}
+                </div>
             </div>
         </div>
     )
