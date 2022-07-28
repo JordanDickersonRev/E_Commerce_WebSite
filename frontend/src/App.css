@@ -300,7 +300,7 @@ Form Button{
 }
 
 .DeckSizes button:hover {
-    background: var(--favorite-hover);
+    background: var(--size-hover);
 }
 
 .SkateBoards {
@@ -319,7 +319,7 @@ Form Button{
 }
 
 .SkateBoards button:hover {
-    background: var(--favorite-hover);
+    background: var(--fav-hover);
 }
 
 .SkateBoards img {

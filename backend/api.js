@@ -34,7 +34,7 @@ app.post("/signup",(req,res)=> {
    ) LIMIT 1;`,(err, result) => {
         if(err) throw err;
         
-        if(result.affectedRows > 0) console.log(result);
+        if(result.affectedRows > 0) res.send({ message: `success`});
         else res.send({ message: `Username or Email already exists`});
     });
 });
@@ -44,8 +44,8 @@ app.post("/login", (req,res)=> {
     const password = req.body.password;
 
     database.query(`SELECT username FROM users WHERE
-        email =` + database.escape(email) +` and 
-        password =` + database.escape(password), 
+        email like binary` + database.escape(email) +` and 
+        password like binary` + database.escape(password), 
         (err, result)=>{
         if(err) throw err;
         
@@ -58,12 +58,14 @@ app.post("/upload", (req,res)=>{
 
     const image_src = req.body.image_src;
     const description = req.body.description;
+    const size = req.body.size;
     const price = req.body.price;
     const quantity = req.body.quantity;
 
-    database.query(`insert into skateboards(image_src, description, price, quantity)
+    database.query(`insert into skateboards(image_src, description, size, price, quantity)
     select * FROM (SELECT`+ database.escape(image_src) +`as image_src,
     `+ database.escape(description) +`as description,
+    `+ database.escape(size) + `as size,
     `+ database.escape(price) +`as price,
     `+ database.escape(quantity) + `as quantity) as new_value
     WHERE NOT EXISTS (
@@ -72,7 +74,7 @@ app.post("/upload", (req,res)=>{
    ) LIMIT 1;`,(err, result) => {
         if(err) throw err;
         
-        if(result.affectedRows > 0) console.log(result);
+        if(result.affectedRows > 0) res.send({ message: `Skateboard was successfully uploaded.`})
         else res.send({ message: `Description of Skateboard already exist.`});
     });
 });
@@ -88,7 +90,7 @@ app.post("/update", (req,res)=>{
         ,(err, result)=>{
             if(err) throw err;
 
-            if(result.affectedRows > 0) console.log(result);
+            if(result.affectedRows > 0) res.send({ message: `Skateboard image was successfully updated.`});
             else res.send({ message: `Description of Skateboard does not exist.`});
         });
 });

@@ -23,6 +23,7 @@ function Store(){
                     <div className='DeckSizes'>
                         <button>7.0</button>
                         <button>7.5</button>
+                        <button>7.625</button>
                         <button>7.75</button>
                         <button>8.0</button>
                         <button>8.25</button>

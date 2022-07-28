@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Axios from 'axios';
-//import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Signup(){
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [confirmEmail, setconfirmEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    let page = useNavigate();
     
     function signupUser(e){
 
@@ -58,19 +60,13 @@ function Signup(){
             }).then(function(response){
                 console.log(response.data);
 
-                if(response.data.message) 
-                    document.getElementById('error').innerHTML = response.data.message + "<br />";
+                if(response.data.message === `success`) page('/login');
+                else document.getElementById('error').innerHTML = response.data.message + "<br />";
             });
         }
+        //if(tryAgain.length === 0) page('/login');
         document.getElementById('error').innerHTML = tryAgain.join('');
     }
-
-    /*let page = useNavigate();
-
-    const createPost = (e) =>{
-        e.preventDefault();
-        page('/');
-    }*/
 
     return (
         <div>
