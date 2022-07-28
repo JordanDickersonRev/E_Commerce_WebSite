@@ -24,6 +24,7 @@ function App() {
     setTheme(newTheme);
   }
 
+  if(username === `Administrator`){
   return (
     <div className="App" data-theme={theme}>
       <label id="username">{username}</label>
@@ -48,6 +49,31 @@ function App() {
       </Router>
     </div>
   );
+  }
+  else {
+    return (
+      <div className="App" data-theme={theme}>
+        <label id="username">{username}</label>
+        <label className="switch">
+          <input 
+            onClick={switchTheme}
+            type = "checkbox"/>
+            <span className='slider_round'/>
+        </label>
+        <Router>
+        <Header/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/signup' element={<Signup/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/store' element={<Store/>}/>
+            <Route path='/favorites' element={<Favorites/>}/>
+            <Route path='/mybag' element={<MyBag/>}/>
+          </Routes>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;

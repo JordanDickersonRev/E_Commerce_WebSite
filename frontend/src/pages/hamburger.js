@@ -10,8 +10,25 @@ function Hamburger(){
   function signOut(){
     setGlobalState("username", '');
   }
-
-  if(username !== ''){
+  if(username === 'Administrator'){
+    return (
+      <Menu>
+        <Link to='/favorites' className='menu-item'>
+          Favorites
+        </Link>
+        <Link to='/' onClick={e => signOut()} className="menu-item">
+          Sign Out
+        </Link>
+        <Link to='/upload' className='menu-item'>
+          Upload
+        </Link>
+        <Link to='/update' className='menu-item'>
+          Update
+        </Link>
+      </Menu>
+    );
+  }
+  else if(username !== ''){
     return (
       <Menu>
         <Link to='/favorites' className='menu-item'>
