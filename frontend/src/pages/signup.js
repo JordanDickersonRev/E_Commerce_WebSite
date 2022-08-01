@@ -53,7 +53,7 @@ function Signup(){
             tryAgain.push(`- NO SPACES<br />`);
         }
         else {
-            Axios.post('http://localhost:3001/signup', {
+            Axios.post('http://localhost:3001/users', {
             username: username, 
             email: email,
             password: password
@@ -64,7 +64,6 @@ function Signup(){
                 else document.getElementById('error').innerHTML = response.data.message + "<br />";
             });
         }
-        //if(tryAgain.length === 0) page('/login');
         document.getElementById('error').innerHTML = tryAgain.join('');
     }
 

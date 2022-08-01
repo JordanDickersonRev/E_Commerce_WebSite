@@ -6,11 +6,14 @@ import { useGlobalState } from '../global/globalStates';
 function Store(){
 
     const [skateboards, setSkateboards] = useState([]);
+    const [size, setSize] = useState('ALL');
     let page = useNavigate();
     const [username] = useGlobalState("username");
 
     useEffect(()=>{
-        Axios.get("http://localhost:3001/store").then((response)=>{
+        Axios.get("http://localhost:3001/store",{
+            params: {size}
+        }).then((response)=>{
             setSkateboards(response.data);
         })
     });
@@ -34,14 +37,6 @@ function Store(){
             }
     }
 
-    function showSize(size){
-        Axios.post("http://localhost:3001/size",{
-            size: size
-        }).then((response)=>{
-            setSkateboards(response.data);
-        })
-    }
-    
     return(
         <div>
             <h2 className='PageHeading'>Complete Skateboards</h2>
@@ -50,14 +45,14 @@ function Store(){
                     <label>SIZES</label>
                     <hr/>
                     <div className='DeckSizes'>
-                        <button onClick={()=> showSize(7.0)}>7.0</button>
-                        <button onClick={()=> showSize(7.5)}>7.5</button>
-                        <button onClick={()=> showSize(7.625)}>7.625</button>
-                        <button onClick={()=> showSize(7.75)}>7.75</button>
-                        <button onClick={()=> showSize(8.0)}>8.0</button>
-                        <button onClick={()=> showSize(8.25)}>8.25</button>
-                        
+                        <button onClick={()=> setSize('7.0')}>7.0</button>
+                        <button onClick={()=> setSize('7.5')}>7.5</button>
+                        <button onClick={()=> setSize('7.625')}>7.625</button>
+                        <button onClick={()=> setSize('7.75')}>7.75</button>
+                        <button onClick={()=> setSize('8.0')}>8.0</button>
+                        <button onClick={()=> setSize('8.25')}>8.25</button>
                     </div>
+                    <button onClick={()=> setSize('ALL')}>SHOW ALL</button>
                 </div>
                 <div className='SkateBoards'>
                     {skateboards.map((value)=>{

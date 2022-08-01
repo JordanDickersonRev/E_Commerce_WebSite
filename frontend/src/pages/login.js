@@ -20,9 +20,8 @@ function Login(){
         if(email === '' || password === '')
             tryAgain.push(`Error blank field(s)<br />`);   
         else {
-            Axios.post('http://localhost:3001/login', {
-            email: email,
-            password: password
+            Axios.get('http://localhost:3001/users', {
+                params: {email,password}
             }).then(function(response){
                 if(!unnecessaryPattern.test(response.data)){
                     setGlobalState("username", response.data);

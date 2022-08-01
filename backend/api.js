@@ -10,10 +10,23 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/store", (req,res)=>{
-    database.query("SELECT * FROM skateboards", (err, result)=>{
-        if(err) throw err;
-        res.send(result);
-    });
+
+    const size = req.query.size;
+
+    if(size === 'ALL'){
+        database.query("SELECT * FROM skateboards", (err, result)=>{
+            if(err) throw err;
+            res.send(result);
+        });
+    }
+    else {
+        database.query(`SELECT * FROM skateboards where
+        size = ` + database.escape(size),
+        (err,result)=>{
+            if(err) throw err;
+            res.send(result);
+        });
+    }
 });
 
 app.post("/store", (req,res)=>{
@@ -57,8 +70,7 @@ app.put("/store", (req,res)=>{
         });
 });
 
-//
-app.post("/signup",(req,res)=> {
+app.post("/users",(req,res)=> {
 
     const username = req.body.username;
     const email = req.body.email;
@@ -79,11 +91,10 @@ app.post("/signup",(req,res)=> {
         else res.send({ message: `Username or Email already exists`});
     });
 });
-
-// could of used get request and made /signup the same url 
-app.post("/login", (req,res)=> {
-    const email = req.body.email;
-    const password = req.body.password;
+ 
+app.get("/users", (req,res)=> {
+    const email = req.query.email;
+    const password = req.query.password;
 
     database.query(`SELECT username FROM users WHERE
         email like binary` + database.escape(email) +` and 
@@ -147,18 +158,6 @@ app.delete('/favorites', (req,res)=>{
         if(err) throw err;
 
         if(result.affectedRows > 0) res.send({ message: `Skateboard was dropped from your favorites.`});
-    });
-});
-
-app.post("/size", (req,res)=>{
-
-    const size = req.body.size;
-
-    database.query(`SELECT * FROM skateboards where 
-    size  = `+ database.escape(size),
-    (err, result)=>{
-        if(err) throw err;
-        res.send(result);
     });
 });
 

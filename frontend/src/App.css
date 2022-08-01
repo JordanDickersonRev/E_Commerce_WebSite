@@ -284,6 +284,16 @@ Form Button{
     background: 1px var(--text-font);
 }
 
+.Sizes button{
+    width: 10.2rem;
+    background: var(--background);
+    color: var(--text-font);
+    border: 1px solid var(--text-font);
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0.1rem;
+}
+
 .DeckSizes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -299,7 +309,7 @@ Form Button{
     padding: 1rem;
 }
 
-.DeckSizes button:hover {
+.Sizes button:hover,.DeckSizes button:hover {
     background: var(--size-hover);
 }
 
