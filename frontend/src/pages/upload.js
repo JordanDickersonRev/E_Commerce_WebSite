@@ -18,7 +18,7 @@ function Upload(){
         else if (isNaN(price) || isNaN(size) || isNaN(quantity))
             tryAgain.push(`Price, Size and Quantity must equal some kind of number <br />`);
         else {
-            Axios.post('http://localhost:3001/upload',{
+            Axios.post('http://localhost:3001/store',{
                 image_src: image, 
                 description: description.trim(),
                 size: size,

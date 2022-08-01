@@ -13,7 +13,7 @@ function Update(){
         if(image === '' || description === '')
             tryAgain.push(`Error blank field(s)<br />`);
         else {
-            Axios.post('http://localhost:3001/update',{
+            Axios.put('http://localhost:3001/store',{
                 image_src: image, 
                 description: description.trim(),
             }).then(function(response){
