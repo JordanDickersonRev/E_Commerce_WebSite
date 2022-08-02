@@ -342,3 +342,58 @@ Form Button{
     cursor: pointer;
 }
 /*End of Store Page*/
+
+/* My Bag Page */
+.myBag {
+    display: flex;
+    background: var(--background);
+    padding: 1rem 15rem 4rem;
+}
+
+.myBag h3{
+    color: var(--text-font);
+}
+
+.myBag hr {
+    background: 1px var(--text-font);
+}
+
+.bagItems {
+    margin-right: 10rem;
+    width: 60%;
+}
+
+.bagFavorites {
+    display: flex;
+    justify-content: center;
+}
+
+.orderSummary {
+    width: 40%;
+}
+
+.orderTotal {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 1rem;
+}
+
+.orderTotal label {
+    color: var(--text-font);
+}
+
+.orderSummary button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    background: var(--background);
+    color: var(--text-font);
+    border: 1px solid var(--text-font);
+    cursor: pointer;
+}
+
+.orderSummary button:hover{
+    background: var(--size-hover);
+}
+/* End of My Bag Page */
