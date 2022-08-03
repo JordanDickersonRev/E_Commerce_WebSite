@@ -3,16 +3,20 @@ import { useLocation } from "react-router-dom"
 function SkateBoards(){
     const location = useLocation();
     const {image, description, size, price, quantity} = location.state;
+    let skateboardLeft = '', bagButton = 'ADD TO MY BAG';
 
+    if (quantity === 0) skateboardLeft = `Out of stock`;
+    else if(quantity < 5) skateboardLeft = `Only ${quantity} left!`;
+    
     return (
         <div>
             <h2 className='PageHeading'>{description}</h2>
             <div className="skateboardPage">
                 <img src={require('./images/'+ image)} alt={price}/>
                 <div className="skateboardInfo">
-                    <label>{'$'+price}</label>
+                    <p>{'$'+price}</p>
                     <hr/>
-                    <label>{'SIZE: '+size}</label>
+                    <p>{'SIZE: '+size}</p>
                     <hr/>
                     <label>QUANTITY:</label>
                     <br/>
@@ -23,10 +27,12 @@ function SkateBoards(){
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <p id="skateboardsLeft"></p> 
+                    <p>{skateboardLeft}</p>
+                    <button>{bagButton}</button> 
                 </div>
             </div>
         </div>
     )
+    
 }
 export default SkateBoards;

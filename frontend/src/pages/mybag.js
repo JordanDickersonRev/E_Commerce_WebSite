@@ -2,6 +2,14 @@ import React,{useState, useEffect} from 'react';
 import { useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 
+let bag = [];
+
+export function addtoBag(item){ bag.push(item); }
+
+export function removefromBag(){
+    
+}
+
 function MyBag(){
 
     const [favorites, setFavorites] = useState([]);
@@ -17,6 +25,11 @@ function MyBag(){
             params: {username}
         }).then((response)=>{setFavorites(response.data);})
     });
+
+    let h3Favorites = 'LOG IN TO VIEW YOUR FAVORITES';
+    if(username !== '') h3Favorites = `FAVORTIES (${favorites.length} ITEMS)`;
+
+    
 
     //if(username === '') document.getElementById("favoriteMenu").innerHTML = 'LOG IN TO VIEW FAVORITES';
     
@@ -39,7 +52,7 @@ function MyBag(){
                 <div className='bagMenu'>
                     
                 </div>
-                <h3>FAVORITES</h3>
+                <h3>{h3Favorites}</h3>
                 <hr/>
                 <div className='favoriteMenu'>
                     {favorites.map((value)=>{
