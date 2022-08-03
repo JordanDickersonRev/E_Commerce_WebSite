@@ -9,6 +9,7 @@ import Signup from './pages/signup';
 import Login from './pages/login';
 import Store from './pages/store';
 import Favorites from './pages/favorites';
+import SkateBoards from './pages/skateboard';
 import MyBag from './pages/mybag';
 import Upload from './pages/upload';
 import Update from './pages/update';
@@ -40,6 +41,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/store' element={<Store/>}/>
           <Route path='/favorites' element={<Favorites/>}/>
+          <Route path='/skateboards' element={<SkateBoards/>}/>
           <Route path='/mybag' element={<MyBag/>}/>
           <Route path='/upload' element={<Upload/>}/>
           <Route path='/update' element={<Update/>}/>
@@ -65,6 +67,7 @@ function App() {
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/store' element={<Store/>}/>
+            <Route path='/skateboards' element={<SkateBoards/>}/>
             <Route path='/mybag' element={<MyBag/>}/>
           </Routes>
         </Router>
@@ -87,6 +90,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/store' element={<Store/>}/>
             <Route path='/favorites' element={<Favorites/>}/>
+            <Route path='/skateboards' element={<SkateBoards/>}/>
             <Route path='/mybag' element={<MyBag/>}/>
           </Routes>
         </Router>

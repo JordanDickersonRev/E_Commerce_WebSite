@@ -2,7 +2,8 @@ import { createGlobalState } from 'react-hooks-global-state';
 
 const {setGlobalState, useGlobalState} = createGlobalState({
     username: '',
-    bag: [],
+    subTotal: 0,
+    bag: '',
 });
 
 export {setGlobalState, useGlobalState};

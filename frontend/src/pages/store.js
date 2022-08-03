@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import Axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link ,useNavigate } from 'react-router-dom';
 import { useGlobalState } from '../global/globalStates';
 
 function Store(){
@@ -13,15 +13,11 @@ function Store(){
     useEffect(()=>{
         Axios.get("http://localhost:3001/store",{
             params: {size}
-        }).then((response)=>{
-            setSkateboards(response.data);
-        })
+        }).then((response)=>{setSkateboards(response.data);})
     });
 
     function addtoFavorites(image_src, description, size, price, quantity){
-        if(username === ''){
-            page('/login');
-        }
+        if(username === ''){page('/login');}
         else {
             Axios.post('http://localhost:3001/favorites', {
                 image_src: image_src, 
@@ -63,10 +59,18 @@ function Store(){
                             value.quantity)}>
                                 FAVORITE
                             </button>
-                            <img src={require('./images/'+ value.image_src)} alt={value.price}/>
-                            <p>{value.description}</p>
-                            <p>{value.size}</p> 
-                            <p>{value.price}</p> 
+                            <Link to='/skateboards' 
+                            state={{ image: value.image_src,
+                                    description: value.description,
+                                    size: value.size,
+                                    price: value.price,
+                                    quantity: value.quantity
+                                }}>
+                                <img src={require('./images/'+ value.image_src)} alt={value.price}/>
+                                <p>{value.description}</p>
+                                <p>{value.size}</p> 
+                                <p>{value.price}</p> 
+                            </Link>
                         </div>     
                     })}
                 </div>

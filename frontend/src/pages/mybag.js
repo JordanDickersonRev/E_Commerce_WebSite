@@ -1,48 +1,53 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import { useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 
 function MyBag(){
 
     const [favorites, setFavorites] = useState([]);
-    const [subTotal, setsubTotal] = useState(0.00);
+    const [subTotal] = useGlobalState("subTotal");
     const [shippingTotal, setshippingTotal] = useState('TBD');
     const [taxTotal, settaxTotal] = useState('TBD');
     const [totalAmount, settotalAmount] = useState(0.00);
 
     const [username] = useGlobalState("username");
 
-    /*useEffect(()=>{
-    if(username !== ''){
+    useEffect(()=>{
         Axios.get("http://localhost:3001/favorites", {
             params: {username}
         }).then((response)=>{setFavorites(response.data);})
-    }
-    /*});*/
+    });
 
-    function displayFavorties(){
+    //if(username === '') document.getElementById("favoriteMenu").innerHTML = 'LOG IN TO VIEW FAVORITES';
+    
+    /*function displayFavorties(){
         if(username !== ''){
             {favorites.map((value)=>{
                 return <div key={value.description}>
-                    <img src={require('./images/'+ value.image_src)} alt={value.description}/>
-                    <p>{value.description}</p>
-                    <p>{value.size}</p> 
-                    <p>{value.price}</p> 
+                    <img src={require('./images/'+ value.image_src)} alt={value.description}/> 
                 </div>     
             })}
         }
         else return <p>LOG IN TO VIEW YOUR FAVORITES</p>
-    }
+    }*/
 
     return (
         <div className="myBag">
             <div className='bagItems'>
                 <h3>MY BAG</h3>
                 <hr/>
+                <div className='bagMenu'>
+                    
+                </div>
                 <h3>FAVORITES</h3>
                 <hr/>
-                
-                
+                <div className='favoriteMenu'>
+                    {favorites.map((value)=>{
+                        return <div key={value.description}>
+                        <img src={require('./images/'+ value.image_src)} alt={value.description}/>
+                    </div> 
+                    })}
+                </div>
             </div>
             <div className='orderSummary'>
                 <h3>ORDER SUMMARY</h3>
@@ -74,3 +79,6 @@ function MyBag(){
 }
 export default MyBag;
 //<img src={require('./images/'+ value.image_src)} alt={value.description}/>
+/*<p>{value.description}</p>
+                        <p>{value.size}</p> 
+                        <p>{value.price}</p> */

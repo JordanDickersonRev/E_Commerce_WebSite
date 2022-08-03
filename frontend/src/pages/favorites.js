@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import { useGlobalState } from '../global/globalStates';
+import {useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 
 function Favorites(){

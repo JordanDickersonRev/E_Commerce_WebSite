@@ -343,6 +343,33 @@ Form Button{
 }
 /*End of Store Page*/
 
+/*Skateboard Page*/
+.skateboardPage {
+    text-align: center;
+    background: var(--background);
+    padding: 1rem 15rem 4rem;
+    display: flex;
+    justify-content: center;
+
+}
+.skateboardPage img {
+    max-width: 60%;
+}
+
+.skateboardInfo {
+    margin-left: 4rem;
+    width: 40%;
+}
+
+.quantity{
+    padding: 0.5rem;
+    margin-top: 0.5rem; 
+    width: 4rem;
+}
+
+
+/*End of Skateboard Page*/
+
 /* My Bag Page */
 .myBag {
     display: flex;
@@ -363,9 +390,26 @@ Form Button{
     width: 60%;
 }
 
-.bagFavorites {
-    display: flex;
-    justify-content: center;
+.bagMenu {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+}
+
+.favoriteMenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.favoriteMenu div{
+    text-align: center;
+    display: inline-block;
+    margin: 1rem 1.5rem 1rem 0rem;
+}
+
+.favoriteMenu img {
+    max-width: 7rem;
+    cursor: pointer;
 }
 
 .orderSummary {
@@ -380,6 +424,7 @@ Form Button{
 
 .orderTotal label {
     color: var(--text-font);
+    margin: 0rem 1rem;
 }
 
 .orderSummary button {
