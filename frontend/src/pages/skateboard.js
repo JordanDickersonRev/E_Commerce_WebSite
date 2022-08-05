@@ -1,13 +1,25 @@
 import { useLocation } from "react-router-dom"
+import {addtoBag, removefromBag} from "./mybag"
+import { setGlobalState , useGlobalState } from '../global/globalStates';
+import React, {useState,useEffect} from 'react';
 
 function SkateBoards(){
     const location = useLocation();
     const {image, description, size, price, quantity} = location.state;
-    let skateboardLeft = '', bagButton = 'ADD TO MY BAG';
+    const [buyingNumber, setbuyingNumber] = useState(0);
+
+    useEffect(()=>{
+        setGlobalState('image',`${image}`);
+        setGlobalState('description',`${description}`);
+        setGlobalState('size',`${size}`);
+        setGlobalState('price',`${price}`);
+    });
+
+    let skateboardLeft = ''//, bagButton = 'ADD TO MY BAG';
 
     if (quantity === 0) skateboardLeft = `Out of stock`;
     else if(quantity < 5) skateboardLeft = `Only ${quantity} left!`;
-    
+
     return (
         <div>
             <h2 className='PageHeading'>{description}</h2>
@@ -21,18 +33,19 @@ function SkateBoards(){
                     <label>QUANTITY:</label>
                     <br/>
                     <select className="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option onChange={()=>setbuyingNumber(1)}>1</option>
+                        <option onChange={()=>setbuyingNumber(2)}>2</option>
+                        <option onChange={()=>setbuyingNumber(3)}>3</option>
+                        <option onChange={()=>setbuyingNumber(4)}>4</option>
+                        <option onChange={()=>setbuyingNumber(5)}>5</option>
                     </select>
                     <p>{skateboardLeft}</p>
-                    <button>{bagButton}</button> 
+                    <button onClick={()=>addtoBag(image,description,size,price,quantity,buyingNumber)}>
+                            ADD TO MY BAG
+                    </button>
                 </div>
             </div>
         </div>
     )
-    
 }
 export default SkateBoards;

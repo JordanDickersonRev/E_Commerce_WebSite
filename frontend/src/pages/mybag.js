@@ -3,21 +3,36 @@ import { useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 
 let bag = [];
+let index = Number;
+let key = Number;
 
-export function addtoBag(item){ bag.push(item); }
+export function addtoBag(image,description,size,price,quantity,buyingNumber){
+    if(quantity < buyingNumber)
+        alert('CANNOT ADD TO MY BAG');
+    else {
+        bag.push(<div key={key += 1}>
+            <img src={require('./images/'+ image)} alt={description}/>
+                <p>{description}</p>
+                <p>{size}</p> 
+                <p>{price}</p>
+                <p>{buyingNumber}</p>
+            </div>);
+    }
+}
 
-export function removefromBag(){
-    
+export function removefromBag(value){
+    index = bag.indexOf(value);
+    bag.splice(index, 1);
 }
 
 function MyBag(){
 
     const [favorites, setFavorites] = useState([]);
-    const [subTotal] = useGlobalState("subTotal");
     const [shippingTotal, setshippingTotal] = useState('TBD');
     const [taxTotal, settaxTotal] = useState('TBD');
     const [totalAmount, settotalAmount] = useState(0.00);
 
+    const [subTotal] = useGlobalState("subTotal");
     const [username] = useGlobalState("username");
 
     useEffect(()=>{
@@ -29,28 +44,13 @@ function MyBag(){
     let h3Favorites = 'LOG IN TO VIEW YOUR FAVORITES';
     if(username !== '') h3Favorites = `FAVORTIES (${favorites.length} ITEMS)`;
 
-    
-
-    //if(username === '') document.getElementById("favoriteMenu").innerHTML = 'LOG IN TO VIEW FAVORITES';
-    
-    /*function displayFavorties(){
-        if(username !== ''){
-            {favorites.map((value)=>{
-                return <div key={value.description}>
-                    <img src={require('./images/'+ value.image_src)} alt={value.description}/> 
-                </div>     
-            })}
-        }
-        else return <p>LOG IN TO VIEW YOUR FAVORITES</p>
-    }*/
-
     return (
         <div className="myBag">
             <div className='bagItems'>
                 <h3>MY BAG</h3>
                 <hr/>
                 <div className='bagMenu'>
-                    
+                    {bag}
                 </div>
                 <h3>{h3Favorites}</h3>
                 <hr/>
@@ -91,7 +91,3 @@ function MyBag(){
     )
 }
 export default MyBag;
-//<img src={require('./images/'+ value.image_src)} alt={value.description}/>
-/*<p>{value.description}</p>
-                        <p>{value.size}</p> 
-                        <p>{value.price}</p> */

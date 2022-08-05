@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 
@@ -11,7 +11,7 @@ useEffect(()=>{
     Axios.get("http://localhost:3001/favorites", {
         params: {username}
     }).then((response)=>{setFavorites(response.data);})
-});
+}); 
 
 function dropfromFavorites(description){
     

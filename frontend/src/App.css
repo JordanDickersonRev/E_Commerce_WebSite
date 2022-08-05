@@ -420,6 +420,18 @@ Form Button{
     text-align: center;
 }
 
+.bagMenu div { margin: 1rem 1.5rem 1rem 0rem; }
+
+.bagMenu p { 
+    cursor: pointer;
+    color: var(--text-font);
+}
+
+.bagMenu img {
+    max-width: 5rem;
+    cursor: pointer;
+}
+
 .favoriteMenu {
     overflow: auto;
     white-space: nowrap;
@@ -431,7 +443,7 @@ Form Button{
     margin: 1rem 1.5rem 1rem 0rem;
 }
 
-.favoriteMenu img {
+.favoriteMenu img{
     max-width: 7rem;
     cursor: pointer;
 }
