@@ -3,13 +3,14 @@ import { useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 
 let bag = [];
-let index = Number;
-let key = Number;
+let bagText = '';
+//let index = 0;
+let key = 0;
+
+export function fullBag(description){return bagText.includes(description);}
 
 export function addtoBag(image,description,size,price,quantity,buyingNumber){
-    if(quantity < buyingNumber)
-        alert('CANNOT ADD TO MY BAG');
-    else {
+        bagText += description;
         bag.push(<div key={key += 1}>
             <img src={require('./images/'+ image)} alt={description}/>
                 <p>{description}</p>
@@ -17,13 +18,13 @@ export function addtoBag(image,description,size,price,quantity,buyingNumber){
                 <p>{price}</p>
                 <p>{buyingNumber}</p>
             </div>);
-    }
+    
 }
 
-export function removefromBag(value){
+/*export function removefromBag(value){
     index = bag.indexOf(value);
     bag.splice(index, 1);
-}
+}*/
 
 function MyBag(){
 
@@ -41,13 +42,19 @@ function MyBag(){
         }).then((response)=>{setFavorites(response.data);})
     });
 
+    let myBag = `MY BAG (${bag.length}) ITEMS`;
     let h3Favorites = 'LOG IN TO VIEW YOUR FAVORITES';
     if(username !== '') h3Favorites = `FAVORTIES (${favorites.length} ITEMS)`;
+
+    function emptyBag(){
+        bagText = '';
+        bag = [];
+    }
 
     return (
         <div className="myBag">
             <div className='bagItems'>
-                <h3>MY BAG</h3>
+                <h3>{myBag}</h3>
                 <hr/>
                 <div className='bagMenu'>
                     {bag}
@@ -83,6 +90,7 @@ function MyBag(){
                 </div>
                 <hr/>
                 <br/>
+                <button onClick={()=>emptyBag()}>EMPTY BAG</button>
                 <button>PAY WITH CREDIT OR GIFT CARD</button>
                 <button>PayPal</button>
                 <button>PayPal CREDIT</button>

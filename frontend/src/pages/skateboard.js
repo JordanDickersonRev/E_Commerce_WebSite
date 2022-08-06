@@ -1,12 +1,13 @@
 import { useLocation } from "react-router-dom"
-import {addtoBag, removefromBag} from "./mybag"
+import {addtoBag, fullBag} from "./mybag"
 import { setGlobalState , useGlobalState } from '../global/globalStates';
 import React, {useState,useEffect} from 'react';
 
 function SkateBoards(){
     const location = useLocation();
     const {image, description, size, price, quantity} = location.state;
-    const [buyingNumber, setbuyingNumber] = useState(0);
+    const [buyingNumber, setbuyingNumber] = useState(1);
+    
 
     useEffect(()=>{
         setGlobalState('image',`${image}`);
@@ -15,10 +16,23 @@ function SkateBoards(){
         setGlobalState('price',`${price}`);
     });
 
-    let skateboardLeft = ''//, bagButton = 'ADD TO MY BAG';
-
+    let skateboardLeft = ''//, bagButton = 'Add to bag';
     if (quantity === 0) skateboardLeft = `Out of stock`;
     else if(quantity < 5) skateboardLeft = `Only ${quantity} left!`;
+
+    function submitTobag(image,description,size,price,quantity,buyingNumber){
+        if(fullBag(description)){
+            alert(`${description} already exist in my bag.`);
+        }
+        else{
+            if(quantity < buyingNumber) alert(`Only ${quantity} left, could not add to bag.`);
+            else if(quantity === 0) alert(`Out of stock, could not add to bag.`);
+            else {
+                alert(`Successfully added to your bag.`);
+                addtoBag(image,description,size,price,quantity,buyingNumber);
+            }
+        }
+    }
 
     return (
         <div>
@@ -32,16 +46,18 @@ function SkateBoards(){
                     <hr/>
                     <label>QUANTITY:</label>
                     <br/>
-                    <select className="quantity">
-                        <option onChange={()=>setbuyingNumber(1)}>1</option>
-                        <option onChange={()=>setbuyingNumber(2)}>2</option>
-                        <option onChange={()=>setbuyingNumber(3)}>3</option>
-                        <option onChange={()=>setbuyingNumber(4)}>4</option>
-                        <option onChange={()=>setbuyingNumber(5)}>5</option>
+                    <select className="quantity" 
+                    onChange={(e) => setbuyingNumber(e.target.value)}
+                    value={buyingNumber}>
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
+                        <option value={3}>3</option>
+                        <option value={4}>4</option>
+                        <option value={5}>5</option>
                     </select>
                     <p>{skateboardLeft}</p>
-                    <button onClick={()=>addtoBag(image,description,size,price,quantity,buyingNumber)}>
-                            ADD TO MY BAG
+                    <button onClick={()=>submitTobag(image,description,size,price,quantity,buyingNumber)}>
+                            ADD TO BAG
                     </button>
                 </div>
             </div>
