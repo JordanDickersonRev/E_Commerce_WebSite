@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function Home() {
     return(
         <div className='homePage'>
-            <Link to='/store' className='homeLink'>
+            <Link to='/store' className='link'>
                 <div className='homeSection1'>
                     <img src={require('./branding/decksImage.png')} alt='SKATE DECKS'/>
                     <button>SHOP NOW!</button>

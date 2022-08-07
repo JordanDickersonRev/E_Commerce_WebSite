@@ -1,3 +1,7 @@
+/*all links in the app*/
+.link { text-decoration: none; }
+/* end of link */
+
 /*theme switch*/
 .switch {
     position: relative;
@@ -185,8 +189,6 @@ Form Button{
     cursor: pointer;
 }
 
-.homeLink { text-decoration: none; }
-
 .homeSection1 {
     display: flex;
     flex-direction: column;
@@ -319,18 +321,12 @@ Form Button{
     margin: 0rem 5rem;
 }
 
-.SkateBoards button {
-    position: absolute;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    background: var(--nav-font);
-    color: var(--text-favorite);
-    border: solid var(--text-favorite);
-}
-
-.SkateBoards button:hover {
-    background: var(--fav-hover);
-}
+/*@media only screen and (max-width: 768px){
+    .SkateBoards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}*/
 
 .SkateBoards img {
     max-width: 95%;
@@ -350,11 +346,21 @@ Form Button{
     padding: 1rem 15rem 4rem;
     display: flex;
     justify-content: center;
+}
 
+.favoriteButton {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background: var(--nav-font);
+    color: var(--text-favorite);
+    border: solid var(--text-favorite);
+    cursor: pointer;
 }
-.skateboardPage img {
-    max-width: 60%;
-}
+
+.favoriteButton:hover {background: var(--fav-hover);}
+
+.skateboardPage img {max-width: 60%;}
 
 .skateboardInfo {
     margin-left: 4rem;
