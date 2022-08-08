@@ -3,7 +3,7 @@ import { useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-let bag = [], bagText ='', key = 0; 
+let bag = [], bagText ='', key = 0, key2 = 0; 
 let boardTotal = 0, subTotal = 0, taxTotal = 0, shippingTotal = 0 ,totalAmount = 0;
 
 export function fullBag(description){return bagText.includes(description);}
@@ -52,13 +52,14 @@ function MyBag(){
     }
 
     function emptyBag(){
-        bag = [] 
-        bagText ='' 
+        bag = []; 
+        bagText =''; 
         key = 0;
-        boardTotal = 0 
-        subTotal = 0 
-        taxTotal = 0 
-        shippingTotal = 0 
+        key2 = 0;
+        boardTotal = 0;
+        subTotal = 0; 
+        taxTotal = 0; 
+        shippingTotal = 0; 
         totalAmount = 0;
     }
 
@@ -74,9 +75,9 @@ function MyBag(){
                 <hr/>
                 <div className='favoriteMenu'>
                     {favorites.map((value)=>{
-                        return <div key={value.description}>
+                        return <div key={key2 += 1}>
                         <Link to='/skateboards' 
-                            state={{ image: value.image_srce,
+                            state={{ image: value.image_src,
                             description: value.description,
                             size: value.size,
                             price: value.price,

@@ -280,6 +280,8 @@ Form Button{
 
 .Sizes label{
     color: var(--text-font);
+
+    font-size: 2.3vw;
 }
 
 .Sizes hr{
@@ -287,13 +289,19 @@ Form Button{
 }
 
 .Sizes button{
-    width: 10.2rem;
+    /*width: 10.2rem;*/
+
+    width: 16.2vw;
     background: var(--background);
     color: var(--text-font);
     border: 1px solid var(--text-font);
     cursor: pointer;
-    padding: 1rem;
+    /*padding: 1rem;*/
+    padding: 1vw;
+
     margin: 0.1rem;
+    
+    font-size: 2.3vw;
 }
 
 .DeckSizes {
@@ -302,13 +310,17 @@ Form Button{
 }
 
 .DeckSizes button {
-    width: 5rem;
+    /*width: 5rem;*/
+
+    width: 8vw;
     margin: 0.1rem;
     background: var(--background);
     color: var(--text-font);
     border: 1px solid var(--text-font);
     cursor: pointer;
-    padding: 1rem;
+
+    padding: 1vw;
+    /*padding: 1rem;*/
 }
 
 .Sizes button:hover,.DeckSizes button:hover {
@@ -321,12 +333,17 @@ Form Button{
     margin: 0rem 5rem;
 }
 
-/*@media only screen and (max-width: 768px){
-    .SkateBoards {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-}*/
+.SkateBoards button {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background: var(--nav-font);
+    color: var(--text-favorite);
+    border: solid var(--text-favorite);
+    cursor: pointer;
+}
+
+.SkateBoards button:hover {background: var(--fav-hover);}
 
 .SkateBoards img {
     max-width: 95%;
@@ -395,9 +412,7 @@ Form Button{
     color: var(--text-font);
 }
 
-.skateboardInfo button:hover {
-    background: var(--size-hover);
-}
+.skateboardInfo button:hover { background: var(--size-hover); }
 /*End of Skateboard Page*/
 
 /* My Bag Page */
@@ -484,3 +499,17 @@ Form Button{
     background: var(--size-hover);
 }
 /* End of My Bag Page */
+
+/*responsive 1024 and below*/
+/*@media screen and (max-width: 1024px){
+    .Store, .skateboardPage, .myBag { padding: 1rem 5rem 4rem; }
+
+    .homePage { padding: 3rem 5rem;}
+}
+
+@media screen and (max-width: 768px){
+    .Sizes label{
+        font-size: 2.5vw;
+    }
+}*/
+/*end of responsive*/
