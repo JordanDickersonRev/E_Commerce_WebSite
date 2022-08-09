@@ -462,14 +462,106 @@ Form Button{
 .orderSummary button:hover{background: var(--size-hover);}
 /* End of My Bag Page */
 
-/*responsive 1024 and below*/
-@media screen and (max-width: 1324px){
-    .Store, .skateboardPage, .myBag { padding: 1rem 10rem 4rem; }
-    .homePage { padding: 3rem 10rem;}
+/*responsive 1324 and below*/
+
+/*@media (max-width: 768px){
+    #username {
+        top: 60px;
+        left: 15%;
+        font-size: 2rem;
+    }
+
+    .message {
+        left: 49%;
+        top: 65px;
+        font-size: 2rem;
+    }
+}*/
+
+@media only screen and (max-width: 1024px){
+    .switch {
+        width: 90px;
+        height: 64px;
+        left: 87%;
+        top: 45px;
+    }
+
+    .slider_round:before {
+        height: 56px;
+        width: 56px;
+    }
+
+    #username {
+        top: 60px;
+        left: 15%;
+        font-size: 1.5rem;
+    }
+
+    .message {
+        left: 49%;
+        top: 65px;
+        font-size: 1.1rem;
+    }
+
+    .navbar {padding: 1rem;}
+    .navbar_logo{font-size: 1.7rem;}
+    .navbar_link{font-size: 1.7rem;}
+    
+    .homePage button {
+        padding: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+    .homePage label { font-size: 1.5rem;}
+
+    .homeSection2{ height: 27rem; }
+
+    .homeSection3{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        height: 120rem;
+    }
+
+    .homeSection3 img {
+        max-width: 40%;
+        max-width: 40%;
+    }
+    
+    .homeCard1 {
+        border-top: 1rem solid var(--text-font);
+        border-right: 1rem solid var(--text-font);
+        border-bottom: 0.5rem solid var(--text-font);
+        border-left: 1rem solid var(--text-font);
+        height: 30rem;
+    }
+    
+    .homeCard2 {
+        border-top: 0.5rem solid var(--text-font);
+        border-right: 1rem solid var(--text-font);
+        border-bottom: 0.5rem solid var(--text-font);
+        border-left: 1rem solid var(--text-font);
+        height: 30rem;
+    }
+    
+    .homeCard3 {
+        border-top: 0.5rem solid var(--text-font);
+        border-right: 1rem solid var(--text-font);
+        border-bottom: 0.5rem solid var(--text-font);
+        border-left: 1rem solid var(--text-font);
+        height: 30rem;
+    }
+    
+    .homeCard4 {
+        border-top: 0.5rem solid var(--text-font);
+        border-right: 1rem solid var(--text-font);
+        border-bottom: 1rem solid var(--text-font);
+        border-left: 1rem solid var(--text-font);
+        height: 30rem;
+    }
 }
 
-@media screen and (max-width: 1095px){
-    .message {left: 50%}
+@media screen and (max-width: 1324px){
+    .Store, .skateboardPage, .myBag { padding: 1rem 10rem 4rem; }
     .homePage { padding: 3rem 6.5rem;}
 }
 /*end of responsive*/

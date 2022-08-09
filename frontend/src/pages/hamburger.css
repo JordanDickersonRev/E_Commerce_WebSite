@@ -70,3 +70,14 @@
     background: var(--background);
     top:0%;
   }
+
+  @media screen and (max-width: 1024px){
+    .bm-burger-button {
+      width: 66px;
+      height: 60px;
+      top: -20px !important;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+  }
