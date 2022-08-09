@@ -8,14 +8,10 @@
   }
   
   /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: var(--text-font);
-  }
+  .bm-burger-bars { background: var(--text-font);}
   
   /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: var(--accent);
-  }
+  .bm-burger-bars-hover { background: var(--accent);}
   
   /* Position and sizing of clickable cross button */
   .bm-cross-button {
@@ -24,9 +20,7 @@
   }
   
   /* Color/shape of close button cross */
-  .bm-cross {
-    background: var(--text-font);
-  }
+  .bm-cross {background: var(--text-font);}
   
   /*
   Sidebar wrapper styles

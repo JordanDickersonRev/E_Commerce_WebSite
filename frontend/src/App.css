@@ -44,9 +44,9 @@
     border-radius: 50%;
 }
 
-input:checked + .slider_round { background-color: var(--accent);}
+input:checked + .slider_round {  background-color: var(--accent);}
 
-input:focus + .slider_round {box-shadow: 0 0 1px var(--accent);}
+input:focus + .slider_round { box-shadow: 0 0 1px var(--accent);}
 
 input:checked + .slider_round:before {
     -webkit-transform: translateX(26px);
@@ -88,7 +88,7 @@ input:checked + .slider_round:before {
     text-decoration: none;
 }
 
-.navbar_logo:hover { color: var(--text-secondary); }
+.navbar_logo:hover {color: var(--text-secondary);}
 
 .navbar_menu {
     list-style: none;
@@ -103,7 +103,7 @@ input:checked + .slider_round:before {
     text-decoration: none;
 }
 
-.navbar_link:hover{ color: var(--text-secondary);}
+.navbar_link:hover{color: var(--text-secondary);}
 /*End of Header*/
 
 /*App Color*/
@@ -117,7 +117,7 @@ input:checked + .slider_round:before {
 Form{
     text-align: center;
     border-radius: 8px;
-    margin: 2rem 10rem;
+    padding: 0.5rem 10rem 2rem;
 }
 
 .PageHeading {
@@ -297,9 +297,7 @@ Form Button{
     padding: 1rem;
 }
 
-.Sizes button:hover,.DeckSizes button:hover {
-    background: var(--size-hover);
-}
+.Sizes button:hover,.DeckSizes button:hover {background: var(--size-hover);}
 
 .SkateBoards {
     display: grid;
@@ -359,9 +357,7 @@ Form Button{
     text-align: left;
 }
 
-.skateboardInfo hr{
-    background: var(--text-font);
-}
+.skateboardInfo hr{background: var(--text-font);}
 
 .skateboardInfo p, .skateboardInfo label{ 
     cursor: default;
@@ -371,7 +367,7 @@ Form Button{
 .quantity{
     padding: 0.5rem;
     margin-top: 0.5rem; 
-    width: 4rem;
+    width: 5rem;
     background: var(--background);
     border: 1px solid var(--text-font);
     color: var(--text-font);
@@ -439,9 +435,7 @@ Form Button{
     cursor: pointer;
 }
 
-.orderSummary {
-    width: 40%;
-}
+.orderSummary {width: 40%;}
 
 .orderTotal {
     display: flex;
@@ -465,21 +459,17 @@ Form Button{
     cursor: pointer;
 }
 
-.orderSummary button:hover{
-    background: var(--size-hover);
-}
+.orderSummary button:hover{background: var(--size-hover);}
 /* End of My Bag Page */
 
 /*responsive 1024 and below*/
-@media screen and (max-width: 1024px){
-    .Store, .skateboardPage, .myBag { padding: 1rem 5rem 4rem; }
-
-    .homePage { padding: 3rem 5rem;}
+@media screen and (max-width: 1324px){
+    .Store, .skateboardPage, .myBag { padding: 1rem 10rem 4rem; }
+    .homePage { padding: 3rem 10rem;}
 }
 
-@media screen and (max-width: 768px){
-    .Sizes label{
-        font-size: 2.5vw;
-    }
+@media screen and (max-width: 1095px){
+    .message {left: 50%}
+    .homePage { padding: 3rem 6.5rem;}
 }
 /*end of responsive*/

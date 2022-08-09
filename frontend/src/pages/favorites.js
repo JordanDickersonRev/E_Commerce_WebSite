@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Favorites(){
 
@@ -32,13 +33,22 @@ return (
                 <div className='SkateBoards'>
                     {favorites.map((value)=>{
                         return <div key={value.description}>
+                            <Link className='link' 
+                            to='/skateboards' 
+                            state={{ image: value.image_src,
+                                    description: value.description,
+                                    size: value.size,
+                                    price: value.price,
+                                    quantity: value.quantity
+                                }}>
                             <button onClick={()=>dropfromFavorites(value.description)}>
                                 Remove
                             </button>
                             <img src={require('./images/'+ value.image_src)} alt={value.description}/>
                             <p>{value.description}</p>
                             <p>{value.size}</p> 
-                            <p>{value.price}</p> 
+                            <p>{value.price}</p>
+                            </Link> 
                         </div>     
                     })}
                 </div>
