@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 function Home() {
     return(
         <div className='homePage'>
+            <h2 className='PageHeading'>FREE SHIPPING ON SUBTOTALS OVER $99.99</h2>
             <Link to='/store' className='link'>
                 <div className='homeSection1'>
                     <img src={require('./branding/decksImage.png')} alt='SKATE DECKS'/>

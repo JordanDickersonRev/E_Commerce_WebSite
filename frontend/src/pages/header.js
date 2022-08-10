@@ -5,7 +5,6 @@ function Header(){
     return (
         <div> 
             <Hamburger/>
-            <label className="message">FREE SHIPPING ON SUBTOTALS OVER $99.99</label> 
             <nav className="navbar">
                 <Link to='/' className="navbar_logo">Skate<br/>House</Link>
                 <ul className="navbar_menu">
@@ -20,4 +19,4 @@ function Header(){
         </div>
     )
 }
-export default Header;
+export default Header; //<label className="message">FREE SHIPPING ON SUBTOTALS OVER $99.99</label> 

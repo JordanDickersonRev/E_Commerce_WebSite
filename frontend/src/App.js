@@ -28,7 +28,6 @@ function App() {
   if(username === `Administrator`){
   return (
     <div className="App" data-theme={theme}>
-      <label id="username">{username}</label>
       <label className="switch">
         <input 
           onClick={switchTheme}
@@ -53,7 +52,6 @@ function App() {
   else if(username === ''){
     return (
       <div className="App" data-theme={theme}>
-        <label id="username">{username}</label>
         <label className="switch">
           <input 
             onClick={switchTheme}
@@ -77,7 +75,6 @@ function App() {
   else {
     return (
       <div className="App" data-theme={theme}>
-        <label id="username">{username}</label>
         <label className="switch">
           <input 
             onClick={switchTheme}
@@ -99,4 +96,4 @@ function App() {
   }
 }
 
-export default App;
+export default App; //<label id="username">{username}</label>

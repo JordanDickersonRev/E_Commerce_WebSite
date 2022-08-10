@@ -13,6 +13,7 @@ function Hamburger(){
   if(username === 'Administrator'){
     return (
       <Menu>
+        <label>{username}</label>
         <Link to='/favorites' className='menu-item'>
           Favorites
         </Link>
@@ -31,6 +32,7 @@ function Hamburger(){
   else if(username !== ''){
     return (
       <Menu>
+        <label>{username}</label>
         <Link to='/favorites' className='menu-item'>
           Favorites
         </Link>

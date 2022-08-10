@@ -56,24 +56,23 @@ input:checked + .slider_round:before {
 /*End of theme switch*/
 
 /*Header*/
-#username{
+/*#username{
     position: absolute;
-    font-size: 0.8rem;
-    /*top: 30px;*/
-    top: 160px;
-    /*left: 20%;*/
-    left: 7%;
+    font-size: 4.2vw;
+    top: 8px;
+    /*left: 20%;
+    left: 4%;
     color: var(--text-font);
-}
+}*/
 
-.message{ 
+/*.message{ 
     display: none;
     /*position: absolute;
-    font-size: 0.8rem;
+    font-size: 4.2vw;
     top: 160px;
     left: 7%;
-    color: var(--text-font);*/
-}
+    color: var(--text-font);
+}*/
 
 .navbar {
     background: linear-gradient(to right, var(--text-primary) 80%, var(--accent));
@@ -86,7 +85,7 @@ input:checked + .slider_round:before {
 
 .navbar_logo {
     color: var(--nav-font);
-    font-size: 1.2rem;
+    font-size: 6vw;
 
     margin-left: 2rem;
 
@@ -103,7 +102,7 @@ input:checked + .slider_round:before {
 
 .navbar_link {
     color: var(--nav-font);
-    font-size: 1.2rem;
+    font-size: 6vw;
 
     margin-right: 2rem;
 
@@ -117,7 +116,7 @@ input:checked + .slider_round:before {
 /*App Color*/
 .App{
     background: var(--background);
-    height: 100vh;
+    height: 110vh;
 }
 /*End of App Color*/
 
@@ -129,7 +128,7 @@ Form{
 }
 
 .PageHeading {
-    font-size: 2rem;
+    font-size: 6vw;
     color: var(--text-font);
     text-align: center;
 }
@@ -162,7 +161,7 @@ Form Button{
 
 /*Home Page*/
 .homePage {
-    padding: 3rem 1rem;
+    padding: 0.1rem 1rem 3rem;
     background: var(--background);
 }
 
@@ -174,7 +173,7 @@ Form Button{
 .homePage button {
     position: relative;
     padding: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 3.9vw;
     width: 100%;
     border: 1px solid var(--background);
     color: var(--text-font);
@@ -186,7 +185,7 @@ Form Button{
     color: var(--nav-font);
     cursor: pointer;
 
-    font-size: 1rem;
+    font-size: 3.9vw;
     margin-bottom: 2rem;
 
 }
@@ -197,9 +196,9 @@ Form Button{
     justify-content: center;
     align-items: center;
 
-    height: 12rem;
+    height: 61vw;
     background: rgb(46, 46, 46);
-    border: 0.5rem solid var(--text-font);
+    border: 0.5vw solid var(--text-font);
 }
 
 /*.homeSection2{
@@ -221,7 +220,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 48rem;
+    height: 240vw;
 }
 
 .homeCard1 {
@@ -229,10 +228,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 3rem solid var(--text-font);
-    border-right: 0.5rem solid var(--text-font);
-    border-bottom: 0.5rem solid var(--text-font);
-    border-left: 0.5rem solid var(--text-font);
+    border: 0.5vw solid var(--text-font);
     background: #1DA1F2;
     cursor: pointer;
 }
@@ -242,7 +238,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5rem solid var(--text-font);
+    border: 0.5vw solid var(--text-font);
     background: linear-gradient(to bottom right, #405DE6, #5B51D8, #833AB4,
     #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
     cursor: pointer;
@@ -253,7 +249,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5rem solid var(--text-font);
+    border: 0.5vw solid var(--text-font);
     background: rgb(46, 46, 46);
     cursor: pointer;
 }
@@ -263,7 +259,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5rem solid var(--text-font);
+    border: 0.5vw solid var(--text-font);
     background: #4267B2;
     cursor: pointer;
 }
@@ -486,17 +482,17 @@ Form Button{
 
 @media only screen and (min-width: 992px){
 
-    #username {
+    /*#username {
         top: 60px;
         left: 15%;
         font-size: 1.5rem;
-    }
+    }*/
 
-    .message {
+    /*.message {
         left: 49%;
         top: 65px;
         font-size: 1.1rem;
-    }
+    }*/
 
     .navbar {padding: 1rem;}
     .navbar_logo{font-size: 1.7rem;}
