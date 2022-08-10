@@ -6,10 +6,10 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
-    left: 90%;
-    top: 25px;
+    width: 90px;
+    height: 64px;
+    left: 87%;
+    top: 40px;
 }
 
 .switch input { 
@@ -34,8 +34,8 @@
 .slider_round:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 56px;
+    width: 56px;
     left: 4px;
     bottom: 4px;
     background-color: var(--text-font);
@@ -58,17 +58,17 @@ input:checked + .slider_round:before {
 /*Header*/
 #username{
     position: absolute;
-    font-size: 1rem;
-    top: 35px;
-    left: 10%;
+    font-size: 2.5rem;
+    top: 45px;
+    left: 15%;
     color: var(--text-font);
 }
 
 .message{ 
     position: absolute;
-    font-size: 1rem;
-    top: 35px;
-    left: 56%;
+    font-size: 2.5rem;
+    top: 370px;
+    left: 10%;
     color: var(--text-font);
 }
 
@@ -77,13 +77,13 @@ input:checked + .slider_round:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
-    margin-top: 1.5rem;
+    padding: 3rem;
+    margin-top: 0.5rem;
 }
 
 .navbar_logo {
     color: var(--nav-font);
-    font-size: 1.5rem;
+    font-size: 3rem;
     cursor: pointer;
     text-decoration: none;
 }
@@ -98,7 +98,7 @@ input:checked + .slider_round:before {
 .navbar_link {
     color: var(--nav-font);
     padding: 0 1rem;
-    font-size: 1.5rem;
+    font-size: 3rem;
     cursor: pointer;
     text-decoration: none;
 }
@@ -154,7 +154,8 @@ Form Button{
 
 /*Home Page*/
 .homePage {
-    padding: 3rem 15rem;
+    padding: 7rem 1rem 3rem;
+    /*padding: 3rem 15rem 3rem;*/
     background: var(--background);
 }
 
@@ -165,8 +166,13 @@ Form Button{
 
 .homePage button {
     position: relative;
-    padding: 0.5rem;
-    font-size: 1rem;
+    /*padding: 0.5rem;
+    font-size: 1rem;*/
+
+    top: 243px;
+
+    padding: 1.5rem;
+    font-size: 2.5rem;
     width: 100%;
     border: 1px solid var(--background);
     color: var(--text-font);
@@ -177,6 +183,10 @@ Form Button{
 .homePage label {
     color: var(--nav-font);
     cursor: pointer;
+
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+
 }
 
 .homeSection1 {
@@ -184,7 +194,8 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30rem;
+    /*height: 30rem*/
+    height: 70rem;
     background: rgb(46, 46, 46);
     border: 1rem solid var(--text-font);
 }
@@ -194,16 +205,17 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 17rem;
+    /*height: 17rem;*/
+    height: 67rem;
     background: rgb(46, 46, 46);
     border: 1rem solid var(--text-font);
     cursor: pointer;
 }
 
 .homeSection3 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 60rem;
+    /*display: grid;
+    grid-template-columns: repeat(2, 1fr);*/
+    height: 140rem;
 }
 
 .homeCard1 {
@@ -212,7 +224,7 @@ Form Button{
     justify-content: center;
     align-items: center;
     border-top: 1rem solid var(--text-font);
-    border-right: 0.5rem solid var(--text-font);
+    border-right: 1rem solid var(--text-font);
     border-bottom: 0.5rem solid var(--text-font);
     border-left: 1rem solid var(--text-font);
     background: #1DA1F2;
@@ -224,10 +236,10 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1rem solid var(--text-font);
+    border-top: 0.5rem solid var(--text-font);
     border-right: 1rem solid var(--text-font);
     border-bottom: 0.5rem solid var(--text-font);
-    border-left: 0.5rem solid var(--text-font);
+    border-left: 1rem solid var(--text-font);
     background: linear-gradient(to bottom right, #405DE6, #5B51D8, #833AB4,
     #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
     cursor: pointer;
@@ -238,9 +250,9 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5rem solid var(--text-font);
-    border-right: 0.5rem solid var(--text-font);
-    border-bottom: 1rem solid var(--text-font);
+    border-top: 0.5rem solid var(--text-font);
+    border-right: 1rem solid var(--text-font);
+    border-bottom: 0.5rem solid var(--text-font);
     border-left: 1rem solid var(--text-font);
     background: rgb(46, 46, 46);
     cursor: pointer;
@@ -251,10 +263,10 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5rem solid var(--text-font);
+    border-top: 0.5rem solid var(--text-font);
     border-right: 1rem solid var(--text-font);
     border-bottom: 1rem solid var(--text-font);
-    border-left: 0.5rem solid var(--text-font);
+    border-left: 1rem solid var(--text-font);
     background: #4267B2;
     cursor: pointer;
 }
@@ -462,33 +474,30 @@ Form Button{
 .orderSummary button:hover{background: var(--size-hover);}
 /* End of My Bag Page */
 
-/*responsive 1324 and below*/
+/*responsive below*/
+@media only screen and (max-width: 600px){
 
-/*@media (max-width: 768px){
-    #username {
-        top: 60px;
-        left: 15%;
-        font-size: 2rem;
-    }
+}
 
-    .message {
-        left: 49%;
-        top: 65px;
-        font-size: 2rem;
-    }
-}*/
+@media only screen and (min-width: 600px){
 
-@media only screen and (max-width: 1024px){
+}
+
+@media only screen and (min-width: 768px){
+
+}
+
+@media only screen and (min-width: 992px){
     .switch {
-        width: 90px;
-        height: 64px;
-        left: 87%;
-        top: 45px;
+        width: 60px;
+        height: 34px;
+        left: 90%;
+        top: 25px;
     }
 
     .slider_round:before {
-        height: 56px;
-        width: 56px;
+        height: 26px;
+        width: 26px;
     }
 
     #username {
@@ -529,24 +538,24 @@ Form Button{
     
     .homeCard1 {
         border-top: 1rem solid var(--text-font);
-        border-right: 1rem solid var(--text-font);
+        border-right: 0.5rem solid var(--text-font);
         border-bottom: 0.5rem solid var(--text-font);
         border-left: 1rem solid var(--text-font);
         height: 30rem;
     }
     
     .homeCard2 {
-        border-top: 0.5rem solid var(--text-font);
+        border: 1rem solid var(--text-font);
         border-right: 1rem solid var(--text-font);
         border-bottom: 0.5rem solid var(--text-font);
-        border-left: 1rem solid var(--text-font);
+        border-left: 0.5rem solid var(--text-font);
         height: 30rem;
     }
     
     .homeCard3 {
         border-top: 0.5rem solid var(--text-font);
-        border-right: 1rem solid var(--text-font);
-        border-bottom: 0.5rem solid var(--text-font);
+        border-right: 0.5rem solid var(--text-font);
+        border-bottom: 1rem solid var(--text-font);
         border-left: 1rem solid var(--text-font);
         height: 30rem;
     }
@@ -555,13 +564,13 @@ Form Button{
         border-top: 0.5rem solid var(--text-font);
         border-right: 1rem solid var(--text-font);
         border-bottom: 1rem solid var(--text-font);
-        border-left: 1rem solid var(--text-font);
+        border-left: 0.5rem solid var(--text-font);
         height: 30rem;
     }
 }
 
-@media screen and (max-width: 1324px){
+@media screen and (min-width: 1200px){
     .Store, .skateboardPage, .myBag { padding: 1rem 10rem 4rem; }
-    .homePage { padding: 3rem 6.5rem;}
+    .homePage { padding: 3rem 15rem 3rem; }
 }
 /*end of responsive*/
