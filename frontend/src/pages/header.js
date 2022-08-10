@@ -10,10 +10,10 @@ function Header(){
                 <Link to='/' className="navbar_logo">Skate<br/>House</Link>
                 <ul className="navbar_menu">
                     <li>
-                        <Link to='/store' className="navbar_link">Complete Skateboards</Link>
+                        <Link to='/store' className="navbar_link">Skateboards</Link>
                     </li>
                     <li>
-                        <Link to='/mybag' className="navbar_link">My Bag</Link>
+                        <Link to='/mybag' className="navbar_link">Bag</Link>
                     </li>
                 </ul>
             </nav>

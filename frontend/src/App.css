@@ -6,10 +6,10 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 90px;
-    height: 64px;
-    left: 87%;
-    top: 40px;
+    width: 60px;
+    height: 34px;
+    left: 75%;
+    top: 20px;
 }
 
 .switch input { 
@@ -34,8 +34,8 @@
 .slider_round:before {
     position: absolute;
     content: "";
-    height: 56px;
-    width: 56px;
+    height: 26px;
+    width: 26px;
     left: 4px;
     bottom: 4px;
     background-color: var(--text-font);
@@ -58,18 +58,21 @@ input:checked + .slider_round:before {
 /*Header*/
 #username{
     position: absolute;
-    font-size: 2.5rem;
-    top: 45px;
-    left: 15%;
+    font-size: 0.8rem;
+    /*top: 30px;*/
+    top: 160px;
+    /*left: 20%;*/
+    left: 7%;
     color: var(--text-font);
 }
 
 .message{ 
-    position: absolute;
-    font-size: 2.5rem;
-    top: 370px;
-    left: 10%;
-    color: var(--text-font);
+    display: none;
+    /*position: absolute;
+    font-size: 0.8rem;
+    top: 160px;
+    left: 7%;
+    color: var(--text-font);*/
 }
 
 .navbar {
@@ -77,13 +80,16 @@ input:checked + .slider_round:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding: 0.5rem;
     margin-top: 0.5rem;
 }
 
 .navbar_logo {
     color: var(--nav-font);
-    font-size: 3rem;
+    font-size: 1.2rem;
+
+    margin-left: 2rem;
+
     cursor: pointer;
     text-decoration: none;
 }
@@ -97,8 +103,10 @@ input:checked + .slider_round:before {
 
 .navbar_link {
     color: var(--nav-font);
-    padding: 0 1rem;
-    font-size: 3rem;
+    font-size: 1.2rem;
+
+    margin-right: 2rem;
+
     cursor: pointer;
     text-decoration: none;
 }
@@ -115,13 +123,13 @@ input:checked + .slider_round:before {
 
 /*Forms*/
 Form{
+    background: var(--background);
     text-align: center;
-    border-radius: 8px;
-    padding: 0.5rem 10rem 2rem;
+    padding: 0.1rem 0.5rem 2rem;
 }
 
 .PageHeading {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--text-font);
     text-align: center;
 }
@@ -154,8 +162,7 @@ Form Button{
 
 /*Home Page*/
 .homePage {
-    padding: 7rem 1rem 3rem;
-    /*padding: 3rem 15rem 3rem;*/
+    padding: 3rem 1rem;
     background: var(--background);
 }
 
@@ -166,13 +173,8 @@ Form Button{
 
 .homePage button {
     position: relative;
-    /*padding: 0.5rem;
-    font-size: 1rem;*/
-
-    top: 243px;
-
-    padding: 1.5rem;
-    font-size: 2.5rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
     width: 100%;
     border: 1px solid var(--background);
     color: var(--text-font);
@@ -184,38 +186,42 @@ Form Button{
     color: var(--nav-font);
     cursor: pointer;
 
-    font-size: 2.3rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
 
 }
 
-.homeSection1 {
+.homeSection1, .homeSection2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*height: 30rem*/
-    height: 70rem;
+
+    height: 12rem;
     background: rgb(46, 46, 46);
-    border: 1rem solid var(--text-font);
+    border: 0.5rem solid var(--text-font);
 }
 
-.homeSection2{
+/*.homeSection2{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /*height: 17rem;*/
-    height: 67rem;
+    
+    height: 15rem;
     background: rgb(46, 46, 46);
-    border: 1rem solid var(--text-font);
+    border: 0.5rem solid var(--text-font);
     cursor: pointer;
-}
+}*/
 
 .homeSection3 {
     /*display: grid;
     grid-template-columns: repeat(2, 1fr);*/
-    height: 140rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 48rem;
 }
 
 .homeCard1 {
@@ -223,10 +229,10 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1rem solid var(--text-font);
-    border-right: 1rem solid var(--text-font);
+    border-top: 3rem solid var(--text-font);
+    border-right: 0.5rem solid var(--text-font);
     border-bottom: 0.5rem solid var(--text-font);
-    border-left: 1rem solid var(--text-font);
+    border-left: 0.5rem solid var(--text-font);
     background: #1DA1F2;
     cursor: pointer;
 }
@@ -236,10 +242,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 0.5rem solid var(--text-font);
-    border-right: 1rem solid var(--text-font);
-    border-bottom: 0.5rem solid var(--text-font);
-    border-left: 1rem solid var(--text-font);
+    border: 0.5rem solid var(--text-font);
     background: linear-gradient(to bottom right, #405DE6, #5B51D8, #833AB4,
     #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
     cursor: pointer;
@@ -250,10 +253,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 0.5rem solid var(--text-font);
-    border-right: 1rem solid var(--text-font);
-    border-bottom: 0.5rem solid var(--text-font);
-    border-left: 1rem solid var(--text-font);
+    border: 0.5rem solid var(--text-font);
     background: rgb(46, 46, 46);
     cursor: pointer;
 }
@@ -263,10 +263,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 0.5rem solid var(--text-font);
-    border-right: 1rem solid var(--text-font);
-    border-bottom: 1rem solid var(--text-font);
-    border-left: 1rem solid var(--text-font);
+    border: 0.5rem solid var(--text-font);
     background: #4267B2;
     cursor: pointer;
 }
@@ -488,17 +485,6 @@ Form Button{
 }
 
 @media only screen and (min-width: 992px){
-    .switch {
-        width: 60px;
-        height: 34px;
-        left: 90%;
-        top: 25px;
-    }
-
-    .slider_round:before {
-        height: 26px;
-        width: 26px;
-    }
 
     #username {
         top: 60px;

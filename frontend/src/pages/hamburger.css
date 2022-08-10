@@ -3,8 +3,8 @@
     position:relative;
     width: 36px;
     height: 30px;
-    left: 36px;
-    top: -5px !important;
+    top: -10px !important;
+    left: 15px;
   }
   
   /* Color/shape of burger icon bars */
@@ -29,6 +29,7 @@
   .bm-menu-wrap {
     position: fixed;
     height: 350px !important;
+    width: 200px !important;
     top: 0% !important;
   }
   
@@ -36,7 +37,7 @@
   .bm-menu {
     background: var(--background);
     padding: 2.5em 1.5em 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -71,13 +72,18 @@
     top:0%;
   }
 
-  @media screen and (max-width: 1024px){
-    .bm-burger-button {
-      width: 66px;
-      height: 60px;
-      top: -20px !important;
-    }
-  }
+@media screen and (min-width: 600px){
+}
 
-  @media screen and (max-width: 768px){
-  }
+@media screen and (max-width: 600px){
+}
+
+@media screen and (min-width: 768px){
+}
+
+@media screen and (min-width: 992px){
+
+}
+
+@media screen and (min-width: 1200px){
+}
