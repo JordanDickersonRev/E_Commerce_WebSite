@@ -28,16 +28,16 @@
   */
   .bm-menu-wrap {
     position: fixed;
-    height: 350px !important;
-    width: 200px !important;
+    max-height: 60% !important;
+    max-width:  60% !important;
     top: 0% !important;
   }
   
   /* General sidebar styles */
   .bm-menu {
     background: var(--background);
-    padding: 2.5em 1.5em 0;
-    font-size: 1.5rem;
+    padding: 5.5vh 1vw;
+    font-size: 3.3vh;
   }
   
   /* Morph shape necessary with bubble or elastic */
@@ -48,14 +48,14 @@
   /* Wrapper for item list */
   .bm-item-list {
     color: var(--text-primary);
-    padding: 0.8em;
+    padding: 3.1vh 3.1vw;
   }
   
   /* Individual item */
     .bm-item {
         display: inline-block;
         color: var(--text-font);
-        margin-bottom: 10px;
+        margin-bottom: 1vh;
         text-align: left;
         text-decoration: none;
         transition: color 0.2s;
@@ -72,18 +72,35 @@
     top:0%;
   }
 
+/*@media screen and (min-width: 440px){
+  .bm-menu-wrap {
+    height: 50vh !important;
+    width: 45vw !important;
+  }
+  .bm-menu {
+    font-size: 4vw;
+    padding: 5.5vw 0.5vw 0; 
+  }
+}
+
 @media screen and (min-width: 600px){
+  .bm-menu-wrap {height: 60vh !important;}
+  .bm-menu {
+    font-size: 3vw;
+    padding: 5vw 0.5vw 0; 
+  }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (min-width: 870px){
+  .bm-menu {
+    font-size: 2.5vw;
+    padding: 2vw 0.5vw 0; 
+  }
 }
 
-@media screen and (min-width: 768px){
-}
-
-@media screen and (min-width: 992px){
-
-}
-
-@media screen and (min-width: 1200px){
-}
+@media screen and (min-width: 1072px){
+  .bm-menu {
+    font-size: 2vw;
+    padding: 1vw 0.5vw 0; 
+  }
+}*/

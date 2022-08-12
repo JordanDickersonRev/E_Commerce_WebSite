@@ -3,7 +3,7 @@ import { useGlobalState } from '../global/globalStates';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-let bag = [], bagText ='', key = 0, key2 = 0; 
+let bag = [], bagText ='', key = 0; 
 let boardTotal = 0, subTotal = 0, taxTotal = 0, shippingTotal = 0 ,totalAmount = 0;
 
 export function fullBag(description){return bagText.includes(description);}
@@ -41,7 +41,7 @@ function MyBag(){
         }).then((response)=>{setFavorites(response.data);})
     });
 
-    let myBag = `MY BAG (${bag.length}) ITEMS`;
+    let myBag = `MY BAG (${bag.length} ITEMS)`;
     let h3Favorites = 'LOG IN TO VIEW YOUR FAVORITES';
     if(username !== '') h3Favorites = `FAVORTIES (${favorites.length} ITEMS)`;
 
@@ -55,7 +55,6 @@ function MyBag(){
         bag = []; 
         bagText =''; 
         key = 0;
-        key2 = 0;
         boardTotal = 0;
         subTotal = 0; 
         taxTotal = 0; 
@@ -75,7 +74,7 @@ function MyBag(){
                 <hr/>
                 <div className='favoriteMenu'>
                     {favorites.map((value)=>{
-                        return <div key={key2 += 1}>
+                        return <div key={value.image_src}>
                         <Link to='/skateboards' 
                             state={{ image: value.image_src,
                             description: value.description,

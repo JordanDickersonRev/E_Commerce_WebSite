@@ -32,7 +32,10 @@ return (
         <div className='Store'>
                 <div className='SkateBoards'>
                     {favorites.map((value)=>{
-                        return <div key={value.description}>
+                        return <div key={value.image_src}>
+                            <button onClick={()=>dropfromFavorites(value.description)}>
+                                Remove
+                            </button>
                             <Link className='link' 
                             to='/skateboards' 
                             state={{ image: value.image_src,
@@ -41,9 +44,6 @@ return (
                                     price: value.price,
                                     quantity: value.quantity
                                 }}>
-                            <button onClick={()=>dropfromFavorites(value.description)}>
-                                Remove
-                            </button>
                             <img src={require('./images/'+ value.image_src)} alt={value.description}/>
                             <p>{value.description}</p>
                             <p>{value.size}</p> 

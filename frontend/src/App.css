@@ -8,8 +8,8 @@
     display: inline-block;
     width: 60px;
     height: 34px;
-    left: 75%;
-    top: 20px;
+    left: 80vw;
+    top: 3.7vh;
 }
 
 .switch input { 
@@ -56,61 +56,36 @@ input:checked + .slider_round:before {
 /*End of theme switch*/
 
 /*Header*/
-/*#username{
-    position: absolute;
-    font-size: 4.2vw;
-    top: 8px;
-    /*left: 20%;
-    left: 4%;
-    color: var(--text-font);
-}*/
-
-/*.message{ 
-    display: none;
-    /*position: absolute;
-    font-size: 4.2vw;
-    top: 160px;
-    left: 7%;
-    color: var(--text-font);
-}*/
 
 .navbar {
     background: linear-gradient(to right, var(--text-primary) 80%, var(--accent));
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
+    padding: 2vh 2vw;
+    margin-top: 2vh;
+    list-style: none;
 }
 
 .navbar_logo {
     color: var(--nav-font);
-    font-size: 6vw;
-
-    margin-left: 2rem;
-
+    font-size: 3.5vh;
+    margin: 0vh 4.5vw;
     cursor: pointer;
     text-decoration: none;
 }
 
 .navbar_logo:hover {color: var(--text-secondary);}
 
-.navbar_menu {
-    list-style: none;
-    display: flex;
-}
-
-.navbar_link {
+.navbar_link, .navbar_link2 {
     color: var(--nav-font);
-    font-size: 6vw;
-
-    margin-right: 2rem;
-
+    font-size: 3.5vh;
+    margin: 0vh 4.5vw;
     cursor: pointer;
     text-decoration: none;
 }
 
-.navbar_link:hover{color: var(--text-secondary);}
+.navbar_link:hover, .navbar_link2:hover{color: var(--text-secondary);}
 /*End of Header*/
 
 /*App Color*/
@@ -124,44 +99,43 @@ input:checked + .slider_round:before {
 Form{
     background: var(--background);
     text-align: center;
-    padding: 0.1rem 0.5rem 2rem;
+    padding: 0.5vh 3vw 3vh;
 }
 
 .PageHeading {
-    font-size: 6vw;
+    font-size: 4vh;
     color: var(--text-font);
     text-align: center;
 }
 
 Form p{
     color: var(--text-font);
-    margin-bottom: 2rem;
+    margin-bottom: 3vh;
 }
 
 .Input{
-    margin-bottom: 0.7rem;
-    font-size: 1.7rem;
+    margin-bottom: 2vh;
+    font-size: 4vh;
     background-color: var(--background);
     color: var(--text-font);
-    border: 1px solid var(--accent);
+    border: 0.1vh solid var(--accent)
 }
 
 Form label{color: var(--text-font);}
 
 Form Button{
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1.7rem;
+    margin: 2vh 0 3vh;
+    font-size: 3.5vh;
     background-color: var(--background);
     color: var(--accent);
-    border: 1px solid var(--accent);
+    border: 0.1vh solid var(--accent);
     cursor: pointer;
 }
 /*End of Forms*/
 
 /*Home Page*/
 .homePage {
-    padding: 0.1rem 1rem 3rem;
+    padding: 0.5vh 15vw 3vh;
     background: var(--background);
 }
 
@@ -172,10 +146,10 @@ Form Button{
 
 .homePage button {
     position: relative;
-    padding: 0.5rem;
-    font-size: 3.9vw;
+    padding: 0.5vh 1vw;
+    font-size: 2.5vh;
     width: 100%;
-    border: 1px solid var(--background);
+    border: 0.5vh solid var(--background);
     color: var(--text-font);
     background: var(--background);
     cursor: pointer;
@@ -184,10 +158,8 @@ Form Button{
 .homePage label {
     color: var(--nav-font);
     cursor: pointer;
-
-    font-size: 3.9vw;
-    margin-bottom: 2rem;
-
+    font-size: 2vh;
+    margin-bottom: 3vh;
 }
 
 .homeSection1, .homeSection2 {
@@ -195,23 +167,11 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    height: 61vw;
+    max-height: 100%;
     background: rgb(46, 46, 46);
-    border: 0.5vw solid var(--text-font);
+    border: 0.5vh solid var(--text-font);
+    margin-top: 1vh;
 }
-
-/*.homeSection2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    height: 15rem;
-    background: rgb(46, 46, 46);
-    border: 0.5rem solid var(--text-font);
-    cursor: pointer;
-}*/
 
 .homeSection3 {
     /*display: grid;
@@ -220,7 +180,8 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 240vw;
+    max-height: 100%;
+    margin-top: 1vh;
 }
 
 .homeCard1 {
@@ -228,7 +189,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5vw solid var(--text-font);
+    border: 0.5vh solid var(--text-font);
     background: #1DA1F2;
     cursor: pointer;
 }
@@ -238,7 +199,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5vw solid var(--text-font);
+    border: 0.5vh solid var(--text-font);
     background: linear-gradient(to bottom right, #405DE6, #5B51D8, #833AB4,
     #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
     cursor: pointer;
@@ -249,7 +210,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5vw solid var(--text-font);
+    border: 0.5vh solid var(--text-font);
     background: rgb(46, 46, 46);
     cursor: pointer;
 }
@@ -259,7 +220,7 @@ Form Button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5vw solid var(--text-font);
+    border: 0.5vh solid var(--text-font);
     background: #4267B2;
     cursor: pointer;
 }
@@ -269,51 +230,47 @@ Form Button{
 .Store {
     text-align: center;
     background: var(--background);
-    padding: 1rem 15rem 4rem;
+    padding: 0.5vh 15vw 3vh;
     display: flex;
+    flex-direction: column;
 }
 
 .Sizes label{color: var(--text-font);}
 
-.Sizes hr{background: 1px var(--text-font);}
+.Sizes hr{background: 0.1vh var(--text-font);}
 
 .Sizes button{
-    width: 10.2rem;
+    width: 51.2vw;
     background: var(--background);
     color: var(--text-font);
-    border: 1px solid var(--text-font);
+    border: 0.1vh solid var(--text-font);
     cursor: pointer;
-    padding: 1rem;
-    margin: 0.1rem;
-}
-
-.DeckSizes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    padding: 2.5vh 1vw;
+    margin: 0.3vh;
 }
 
 .DeckSizes button {
-    width: 5rem;
-    margin: 0.1rem;
+    width: 25vw;
+    margin: 0.3vh;
     background: var(--background);
     color: var(--text-font);
-    border: 1px solid var(--text-font);
+    border: 0.1vh solid var(--text-font);
     cursor: pointer;
-    padding: 1rem;
+    padding: 2.5vh 1vw;
 }
 
 .Sizes button:hover,.DeckSizes button:hover {background: var(--size-hover);}
 
 .SkateBoards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0rem 5rem;
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 15vw;
 }
 
 .SkateBoards button {
     position: absolute;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
+    padding: 1vh 3vw;
+    margin: 0.5vh 1vw;
     background: var(--nav-font);
     color: var(--text-favorite);
     border: solid var(--text-favorite);
@@ -337,18 +294,19 @@ Form Button{
 .skateboardPage {
     text-align: center;
     background: var(--background);
-    padding: 1rem 15rem 4rem;
+    padding: 1vh 15vw 20vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .favoriteButton {
-    position: absolute;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    background: var(--nav-font);
-    color: var(--text-favorite);
-    border: solid var(--text-favorite);
+    position: relative;
+    padding: 2vh 7vw;
+    margin: 0.8vh 4vw 2.5vh;
+    background: var(--background);
+    color: var(--text-font);
+    border: 0.1vh solid var(--text-font);
     cursor: pointer;
 }
 
@@ -357,9 +315,7 @@ Form Button{
 .skateboardPage img {max-width: 60%;}
 
 .skateboardInfo {
-    margin-left: 4rem;
-    width: 40%;
-    text-align: left;
+    
 }
 
 .skateboardInfo hr{background: var(--text-font);}
@@ -370,20 +326,20 @@ Form Button{
 }
 
 .quantity{
-    padding: 0.5rem;
-    margin-top: 0.5rem; 
-    width: 5rem;
+    padding: 1.5vh 2vw;
+    margin-top: 2.5vh; 
+    width: 20vw;
     background: var(--background);
-    border: 1px solid var(--text-font);
+    border: 0.1vh solid var(--text-font);
     color: var(--text-font);
 }
 
 .skateboardInfo button {
-    padding: 0.5rem 3rem;
+    padding: 1.5vh 4.1vw;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 2.7vh;
     background: var(--background);
-    border: 1px solid var(--text-font);
+    border: 0.1vh solid var(--text-font);
     color: var(--text-font);
 }
 
@@ -393,26 +349,23 @@ Form Button{
 /* My Bag Page */
 .myBag {
     display: flex;
+    flex-direction: column;
     background: var(--background);
-    padding: 1rem 15rem 4rem;
+    padding: 1vh 15vw 4vh;
 }
 
 .myBag h3{color: var(--text-font);}
 
-.myBag hr {background: 1px var(--text-font);}
+.myBag hr {background: 0.1vh var(--text-font);}
 
 .bagItems {
-    margin-right: 10rem;
-    width: 60%;
+    
+   
 }
 
-.bagMenu {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    text-align: center;
-}
+.bagMenu {text-align: center;}
 
-.bagMenu div { margin: 1rem 1.5rem 1rem 0rem; }
+.bagMenu div { }
 
 .bagMenu p { 
     cursor: pointer;
@@ -420,7 +373,7 @@ Form Button{
 }
 
 .bagMenu img {
-    max-width: 5rem;
+    max-width: 30vw;
     cursor: pointer;
 }
 
@@ -432,35 +385,35 @@ Form Button{
 .favoriteMenu div{
     text-align: center;
     display: inline-block;
-    margin: 1rem 1.5rem 1rem 0rem;
+    margin: 1vh 5vw 2.5vh 0vh;
 }
 
 .favoriteMenu img{
-    max-width: 7rem;
+    max-width: 35vw;
     cursor: pointer;
 }
 
-.orderSummary {width: 40%;}
+/*.orderSummary {width: 40%;}*/
 
 .orderTotal {
     display: flex;
     justify-content: space-between;
-    padding: 0.4rem 1rem;
+    padding: 1vh 0vw;
 }
 
 .orderTotal label {
     color: var(--text-font);
-    margin: 0rem 1rem;
+    margin: 0vh 2vw;
 }
 
 .orderSummary button {
     width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+    padding: 2.5vh 3.5vw;
+    font-size: 2.7vh;
+    margin-bottom: 2.5vh;
     background: var(--background);
     color: var(--text-font);
-    border: 1px solid var(--text-font);
+    border: 0.1vh solid var(--text-font);
     cursor: pointer;
 }
 
@@ -468,91 +421,97 @@ Form Button{
 /* End of My Bag Page */
 
 /*responsive below*/
-@media only screen and (max-width: 600px){
-
+@media only screen and (min-width: 426px){
+    
 }
 
 @media only screen and (min-width: 600px){
-
+    .switch{ left: 89vw; }
 }
 
-@media only screen and (min-width: 768px){
-
-}
-
-@media only screen and (min-width: 992px){
-
-    /*#username {
-        top: 60px;
-        left: 15%;
-        font-size: 1.5rem;
-    }*/
-
-    /*.message {
-        left: 49%;
-        top: 65px;
-        font-size: 1.1rem;
-    }*/
-
-    .navbar {padding: 1rem;}
-    .navbar_logo{font-size: 1.7rem;}
-    .navbar_link{font-size: 1.7rem;}
-    
-    .homePage button {
-        padding: 0.5rem;
-        font-size: 1.3rem;
-    }
-
-    .homePage label { font-size: 1.5rem;}
-
-    .homeSection2{ height: 27rem; }
-
+@media only screen and (min-width: 769px){
     .homeSection3{
         display: grid;
-        grid-template-columns: repeat(1,1fr);
-        height: 120rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .homeSection3 img {
-        max-width: 40%;
-        max-width: 40%;
+    .Store{
+        display: flex;
+        flex-direction: row;
     }
+
+    .Sizes button {width: 16vw;}
+
+    .DeckSizes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .DeckSizes button {width: 7.8vw;}
+
+    .SkateBoards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0vh 8vw;
+    }
+
+    .skateboardPage {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 1vh 15vw 3vh;
+    }
+
+    .skateboardInfo {
+        margin-left: 4vw;
+        text-align: left;
+    }
+
+    .favoriteButton {
+        position: absolute;
+        background: var(--nav-font);
+        color: var(--text-favorite);
+        border: solid var(--text-favorite);
+    }
+
+    .myBag {
+        display: flex;
+        flex-direction: row;
+        background: var(--background);
+    }
+
+    .bagItems {
+        margin-right: 15vw;
+        width: 60%;
+    }
+
+    .bagMenu {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .bagMenu div { margin: 2.5vh 2.5vw 2.5vh 0vw; }
+
+    .bagMenu img {
+        max-width: 11vw;
+    }
+
+    .favoriteMenu div{
+        text-align: center;
+        display: inline-block;
+        margin: 2.5vh 2vw 2.5vh 0vh;
+    }
+
+    .favoriteMenu img{ max-width: 14vw; }
+
+    .orderSummary {width: 40%;}
+}
+
+@media only screen and (min-width: 993px){
     
-    .homeCard1 {
-        border-top: 1rem solid var(--text-font);
-        border-right: 0.5rem solid var(--text-font);
-        border-bottom: 0.5rem solid var(--text-font);
-        border-left: 1rem solid var(--text-font);
-        height: 30rem;
-    }
-    
-    .homeCard2 {
-        border: 1rem solid var(--text-font);
-        border-right: 1rem solid var(--text-font);
-        border-bottom: 0.5rem solid var(--text-font);
-        border-left: 0.5rem solid var(--text-font);
-        height: 30rem;
-    }
-    
-    .homeCard3 {
-        border-top: 0.5rem solid var(--text-font);
-        border-right: 0.5rem solid var(--text-font);
-        border-bottom: 1rem solid var(--text-font);
-        border-left: 1rem solid var(--text-font);
-        height: 30rem;
-    }
-    
-    .homeCard4 {
-        border-top: 0.5rem solid var(--text-font);
-        border-right: 1rem solid var(--text-font);
-        border-bottom: 1rem solid var(--text-font);
-        border-left: 0.5rem solid var(--text-font);
-        height: 30rem;
-    }
 }
 
 @media screen and (min-width: 1200px){
-    .Store, .skateboardPage, .myBag { padding: 1rem 10rem 4rem; }
-    .homePage { padding: 3rem 15rem 3rem; }
+    .switch{ left: 94vw; }
 }
 /*end of responsive*/
