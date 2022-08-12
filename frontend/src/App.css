@@ -56,7 +56,6 @@ input:checked + .slider_round:before {
 /*End of theme switch*/
 
 /*Header*/
-
 .navbar {
     background: linear-gradient(to right, var(--text-primary) 80%, var(--accent));
     display: flex;
@@ -174,8 +173,6 @@ Form Button{
 }
 
 .homeSection3 {
-    /*display: grid;
-    grid-template-columns: repeat(2, 1fr);*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -314,10 +311,6 @@ Form Button{
 
 .skateboardPage img {max-width: 60%;}
 
-.skateboardInfo {
-    
-}
-
 .skateboardInfo hr{background: var(--text-font);}
 
 .skateboardInfo p, .skateboardInfo label{ 
@@ -358,14 +351,7 @@ Form Button{
 
 .myBag hr {background: 0.1vh var(--text-font);}
 
-.bagItems {
-    
-   
-}
-
 .bagMenu {text-align: center;}
-
-.bagMenu div { }
 
 .bagMenu p { 
     cursor: pointer;
@@ -393,8 +379,6 @@ Form Button{
     cursor: pointer;
 }
 
-/*.orderSummary {width: 40%;}*/
-
 .orderTotal {
     display: flex;
     justify-content: space-between;
@@ -421,10 +405,6 @@ Form Button{
 /* End of My Bag Page */
 
 /*responsive below*/
-@media only screen and (min-width: 426px){
-    
-}
-
 @media only screen and (min-width: 600px){
     .switch{ left: 89vw; }
 }
@@ -505,10 +485,6 @@ Form Button{
     .favoriteMenu img{ max-width: 14vw; }
 
     .orderSummary {width: 40%;}
-}
-
-@media only screen and (min-width: 993px){
-    
 }
 
 @media screen and (min-width: 1200px){

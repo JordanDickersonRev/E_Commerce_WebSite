@@ -96,4 +96,4 @@ function App() {
   }
 }
 
-export default App; //<label id="username">{username}</label>
+export default App;

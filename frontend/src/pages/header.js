@@ -13,10 +13,4 @@ function Header(){
         </div>
     )
 }
-export default Header; //<label className="message">FREE SHIPPING ON SUBTOTALS OVER $99.99</label> 
-/*<ul className="navbar_menu">
-                    <li>
-                    </li>
-                    <li>
-                    </li>
-                </ul>*/
+export default Header;
