@@ -234,7 +234,10 @@ Form Button{
 
 .Sizes label{color: var(--text-font);}
 
-.Sizes hr{background: 0.1vh var(--text-font);}
+.Sizes hr{
+    background: 0.1vh var(--text-font);
+    width: 51.2vw;
+}
 
 .Sizes button{
     width: 51.2vw;
@@ -420,6 +423,7 @@ Form Button{
         flex-direction: row;
     }
 
+    .Sizes hr{width: 16vw;}
     .Sizes button {width: 16vw;}
 
     .DeckSizes {
@@ -488,6 +492,6 @@ Form Button{
 }
 
 @media screen and (min-width: 1200px){
-    .switch{ left: 94vw; }
+    .switch{ left: 93vw; }
 }
 /*end of responsive*/
