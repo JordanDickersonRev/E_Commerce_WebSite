@@ -4,7 +4,7 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
 let bag = [], bagText ='', key = 0; 
-let boardTotal = 0, subTotal = 0, taxTotal = 0, shippingTotal = 0 ,totalAmount = 0;
+let boardTotal = 0, subTotal = 0, taxTotal = 0, shippingTotal = 0 ,totalAmount = 0, bagItems = 0;
 
 export function fullBag(description){return bagText.includes(description);}
 
@@ -12,6 +12,7 @@ export function addtoBag(image,description,size,price,quantity,buyingNumber){
         bagText += description;
         boardTotal = price * buyingNumber;
         subTotal += boardTotal;
+        bagItems += Number(buyingNumber);
         bag.push(<div key={key += 1}>
             <Link className='link'
                 to='/skateboards' 
@@ -41,7 +42,7 @@ function MyBag(){
         }).then((response)=>{setFavorites(response.data);})
     });
 
-    let myBag = `MY BAG (${bag.length} ITEMS)`;
+    let myBag = `MY BAG (${bagItems} ITEMS)`;
     let h3Favorites = 'LOG IN TO VIEW YOUR FAVORITES';
     if(username !== '') h3Favorites = `FAVORTIES (${favorites.length} ITEMS)`;
 
@@ -60,6 +61,7 @@ function MyBag(){
         taxTotal = 0; 
         shippingTotal = 0; 
         totalAmount = 0;
+        bagItems = 0;
     }
 
     return (
