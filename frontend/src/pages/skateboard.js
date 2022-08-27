@@ -1,8 +1,7 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import {addtoBag, fullBag} from "./mybag"
 import { setGlobalState } from '../global/globalStates';
 import React, {useState,useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import { useGlobalState } from '../global/globalStates';
 
